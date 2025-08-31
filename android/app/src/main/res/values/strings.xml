@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Vertex</string>
+    <string name="title_activity_main">Vertex</string>
+    <string name="package_name">com.deepak.vertex</string>
+    <string name="custom_url_scheme">com.deepak.vertex</string>
+</resources>

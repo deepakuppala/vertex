@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const cheatSheets = [
   // Java
-  { name: "Java Programming Cheatsheet", category: "Java", link: "https://introcs.cs.princeton.edu/11cheatsheet.pdf" },
+  { name: "Java Programming Cheatsheet", category: "Java", link: "https://introcs.cs.princeton.edu/java/11cheatsheet/" },
   { name: "Java Language Cheat Sheet", category: "Java", link: "https://cs2113f18.github.io/java/JavaCheatSheet.pdf" },
 
   // Python
@@ -17,37 +17,37 @@ const cheatSheets = [
   { name: "HTML Cheat Sheet - Stanford", category: "HTML", link: "https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf" },
 
   // CSS
-  { name: "CSS Cheat Sheet", category: "CSS", link: "https://stonybrook.edu/~mkaiser/css-cheatsheet.pdf" },
-  { name: "CSS Quick Reference", category: "CSS", link: "https://websitesetup.org/wp-content/uploads/2015/04/css3-cheat-sheet.pdf" },
+  { name: "CSS Cheat Sheet", category: "CSS", link: "https://www.codewithharry.com/blogpost/css-cheatsheet" },
+  { name: "CSS Quick Reference", category: "CSS", link: "https://www3.cs.stonybrook.edu/~pramod.ganapathi/doc/CSE102/CSE102-CheatSheetCSSLong.pdf" },
 
   // JavaScript
   { name: "JavaScript Cheat Sheet", category: "JavaScript", link: "https://htmlcheatsheet.com/js-cheat-sheet.pdf" },
-  { name: "jQuery Cheat Sheet", category: "JavaScript", link: "https://oscarotero.com/jquerycheatsheet.pdf" },
+  { name: "jQuery Cheat Sheet", category: "JavaScript", link: "https://htmlcheatsheet.com/jquery/jQuery-Cheat-Sheet.pdf" },
 
   // React
-  { name: "React Cheat Sheet", category: "React", link: "https://reactcheatsheet.com.pdf" },
+  { name: "React Cheat Sheet", category: "React", link: "https://ihatetomatoes.net/wp-content/uploads/2017/01/react-cheat-sheet.pdf" },
 
   // Node.js
-  { name: "Node.js Quick Reference", category: "NodeJS", link: "https://nodejs.dev/static/pdf/nodejs-cheatsheet.pdf" },
+  { name: "Node.js Quick Reference", category: "NodeJS", link: "https://courses.cs.washington.edu/courses/cse154/19su/resources/assets/cheatsheets/node-cheatsheet.pdf" },
 
   // SQL
-  { name: "SQL Quick Reference", category: "SQL", link: "https://www.sqltutorial.org/sql-cheat-sheet/pdf/" },
-  { name: "MySQL Cheat Sheet", category: "SQL", link: "https://www.mysqltutorial.org/wp-content/uploads/2014/08/mysql-cheat-sheet.pdf" },
-  { name: "PostgreSQL Cheat Sheet", category: "SQL", link: "https://www.postgresql.org/files/documentation/pdf/postgresql-cheat-sheet.pdf" },
+  { name: "SQL Quick Reference", category: "SQL", link: "https://www.dbvis.com/wp-content/uploads/2024/04/SQL-Cheat-Sheet.pdf" },
+  { name: "MySQL Cheat Sheet", category: "SQL", link: "https://learnsql.com/blog/mysql-cheat-sheet/mysql-cheat-sheet-a4.pdf" },
+  { name: "PostgreSQL Cheat Sheet", category: "SQL", link: "https://learnsql.com/blog/postgresql-cheat-sheet/postgresql-cheat-sheet-a4.pdf" },
 
   // Data Structures & Algorithms
-  { name: "Data Structures Cheat Sheet", category: "DSA", link: "https://www.cs.cmu.edu/~adamchik/15-121/lectures/cheatsheet.pdf" },
-  { name: "Algorithms Cheat Sheet", category: "DSA", link: "https://algs4.cs.princeton.edu/cheatsheet/cheatsheet.pdf" },
+  { name: "Data Structures Cheat Sheet", category: "DSA", link: "https://www.scribd.com/document/875983183/Detailed-DSA-CheatSheet-TCS-Ninja" },
+  { name: "Algorithms Cheat Sheet", category: "DSA", link: "https://algs4.cs.princeton.edu/cheatsheet/" },
 
   // Git & DevOps
   { name: "Git Commands", category: "DevOps", link: "https://education.github.com/git-cheat-sheet-education.pdf" },
-  { name: "Docker Cheatsheet", category: "DevOps", link: "https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf" },
-  { name: "Linux Commands", category: "DevOps", link: "https://www.guru99.com/linux-commands-cheat-sheet.html" },
+  { name: "Docker Cheatsheet", category: "DevOps", link: "https://docs.docker.com/get-started/docker_cheatsheet.pdf" },
+  { name: "Linux Commands", category: "DevOps", link: "https://www.loggly.com/wp-content/uploads/2015/05/Linux-Cheat-Sheet-Sponsored-By-Loggly.pdf" },
 
   // AI/ML
-  { name: "Machine Learning Cheatsheet", category: "AI/ML", link: "https://scikit-learn.org/stable/tutorial/machine_learning_map/cheatsheet.pdf" },
-  { name: "Deep Learning Cheatsheet", category: "AI/ML", link: "https://deeplearning4j.konduit.ai/docs/cheatsheet" },
-  { name: "TensorFlow Guide", category: "AI/ML", link: "https://www.tensorflow.org/resources/learn-ml" },
+  { name: "Machine Learning Cheatsheet", category: "AI/ML", link: "https://www.datacamp.com/cheat-sheet/machine-learning-cheat-sheet" },
+  { name: "Deep Learning Cheatsheet", category: "AI/ML", link: "http://stanford.edu/~shervine/teaching/cs-229/cheatsheet-deep-learning" },
+  { name: "TensorFlow Guide", category: "AI/ML", link: "https://www.beoptimized.be/pdf/TensorFlow2Cheatsheet.pdf" },
 ];
 
 export default function CheatSheetsPage() {
