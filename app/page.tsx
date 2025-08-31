@@ -73,7 +73,12 @@ export default function Home() {
       {/* Navbar */}
       <nav className="fixed w-full z-50 top-0 left-0 bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-blue-600">Vertex</h1>
+          {/* Logo with subtitle */}
+          <div className="flex flex-col">
+            <h1 className="text-3xl font-bold text-blue-600">Vertex</h1>
+            <span className="text-sm text-gray-500">by Deepak Uppala</span>
+          </div>
+
           <div className="space-x-6">
             <Link href="/" className="hover:text-blue-600 font-medium transition">Home</Link>
             <Link href="/roadmaps" className="hover:text-blue-600 font-medium transition">Roadmaps</Link>
@@ -81,6 +86,7 @@ export default function Home() {
             <Link href="/certifications" className="hover:text-blue-600 font-medium transition">Certifications</Link>
             <Link href="/cheatsheets" className="hover:text-blue-600 font-medium transition">Cheat Sheets</Link>
           </div>
+
           <button
             onClick={() => setDashboardOpen(!dashboardOpen)}
             className="ml-6 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
