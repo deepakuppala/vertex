@@ -3,84 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-// --- AI Chatbox Component ---
-function AIChatBox() {
-  const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<{ user: boolean; text: string }[]>([]);
-  const [input, setInput] = useState("");
-
-  const sendMessage = async () => {
-    if (!input.trim()) return;
-
-    setMessages([...messages, { user: true, text: input }]);
-    const userMessage = input;
-    setInput("");
-
-    try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage }),
-      });
-
-      const data = await res.json();
-      setMessages((prev) => [...prev, { user: false, text: data.reply }]);
-    } catch (err) {
-      setMessages((prev) => [...prev, { user: false, text: "Error: AI response failed." }]);
-    }
-  };
-
-  return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-      <button
-        onClick={() => setOpen(!open)}
-        className="bg-blue-600 text-white rounded-full w-14 h-14 flex justify-center items-center shadow-lg hover:bg-blue-700 transition"
-      >
-        💬
-      </button>
-
-      {open && (
-        <div className="mt-4 w-80 bg-white rounded-xl shadow-2xl flex flex-col overflow-hidden">
-          <div className="bg-blue-600 text-white px-4 py-2 flex justify-between items-center">
-            <span className="font-semibold">AI Chat</span>
-            <button onClick={() => setOpen(false)}>✕</button>
-          </div>
-
-          <div className="p-4 h-64 overflow-y-auto space-y-3 flex flex-col">
-            {messages.map((msg, idx) => (
-              <div
-                key={idx}
-                className={`px-3 py-2 rounded-lg max-w-[75%] ${
-                  msg.user ? "bg-blue-100 self-end" : "bg-gray-100 self-start"
-                }`}
-              >
-                {msg.text}
-              </div>
-            ))}
-          </div>
-
-          <div className="p-3 border-t border-gray-200 flex gap-2">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-              placeholder="Type a message..."
-              className="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-            />
-            <button
-              onClick={sendMessage}
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-            >
-              Send
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
 // --- Home Component ---
 export default function Home() {
   const features = [
@@ -105,7 +27,7 @@ export default function Home() {
     },
   ];
 
-  // Other states (dashboard, quiz, etc.) remain the same...
+  // Dashboard state
   const [dashboardOpen, setDashboardOpen] = useState(false);
   const dashboardItems = [
     { title: "Frontend Roadmap", progress: 70 },
@@ -113,6 +35,7 @@ export default function Home() {
     { title: "AI/ML Projects", progress: 20 },
   ];
 
+  // Quiz state
   const [quizOpen, setQuizOpen] = useState(false);
   const [quizStep, setQuizStep] = useState(0);
   const [quizAnswer, setQuizAnswer] = useState<number[]>([]);
@@ -132,6 +55,7 @@ export default function Home() {
     "Data Scientist": [1, 7, 11, 12],
     "Full-Stack Developer": [0, 3, 5, 6, 13, 14],
   };
+
   const calculateResult = () => {
     const scores: { [key: string]: number } = {};
     roles.forEach((role) => (scores[role] = 0));
@@ -243,9 +167,6 @@ export default function Home() {
       <footer className="py-12 bg-blue-600 text-center text-white">
         <p>© {new Date().getFullYear()} Vertex. All rights reserved.</p>
       </footer>
-
-      {/* --- AI Chatbox --- */}
-      <AIChatBox />
     </main>
   );
 }
