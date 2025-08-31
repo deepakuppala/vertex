@@ -165,7 +165,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-12 bg-blue-600 text-center text-white">
-        <p>© {new Date().getFullYear()} Vertex. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Vertex. All rights reserved Built by Deepak Uppala</p>
       </footer>
     </main>
   );
