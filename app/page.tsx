@@ -44,7 +44,6 @@ export default function Home() {
     { question: "Do you enjoy designing websites?", options: ["Yes", "No"] },
     { question: "Do you like working with data?", options: ["Yes", "No"] },
     { question: "Are you interested in AI/ML?", options: ["Yes", "No"] },
-    // ...rest of questions
   ];
 
   const roles = ["Frontend Developer", "Backend Developer", "AI/ML Engineer", "Data Scientist", "Full-Stack Developer"];
@@ -75,11 +74,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
           {/* Logo with subtitle */}
           <div className="flex flex-col">
-            <h1 className="text-3xl font-bold text-blue-600">Vertex</h1>
+            <h1 className="text-3xl font-bold text-blue-600">VerteX</h1>
             <span className="text-sm text-gray-500">by Deepak Uppala</span>
           </div>
 
-          <div className="space-x-6">
+          {/* Desktop Links */}
+          <div className="hidden md:flex space-x-6">
             <Link href="/" className="hover:text-blue-600 font-medium transition">Home</Link>
             <Link href="/roadmaps" className="hover:text-blue-600 font-medium transition">Roadmaps</Link>
             <Link href="/internships" className="hover:text-blue-600 font-medium transition">Internships</Link>
@@ -87,13 +87,33 @@ export default function Home() {
             <Link href="/cheatsheets" className="hover:text-blue-600 font-medium transition">Cheat Sheets</Link>
           </div>
 
-          <button
-            onClick={() => setDashboardOpen(!dashboardOpen)}
-            className="ml-6 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-          >
-            📊 Dashboard
-          </button>
+          {/* Mobile Hamburger */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setDashboardOpen(!dashboardOpen)}
+              className="px-3 py-2 border rounded text-blue-600 border-blue-600 hover:bg-blue-100 transition mr-2"
+            >
+              ☰
+            </button>
+            <button
+              onClick={() => setDashboardOpen(!dashboardOpen)}
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+            >
+              📊 Dashboard
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {dashboardOpen && (
+          <div className="md:hidden bg-white shadow-md px-4 py-2 space-y-2">
+            <Link href="/" className="block hover:text-blue-600 font-medium transition">Home</Link>
+            <Link href="/roadmaps" className="block hover:text-blue-600 font-medium transition">Roadmaps</Link>
+            <Link href="/internships" className="block hover:text-blue-600 font-medium transition">Internships</Link>
+            <Link href="/certifications" className="block hover:text-blue-600 font-medium transition">Certifications</Link>
+            <Link href="/cheatsheets" className="block hover:text-blue-600 font-medium transition">Cheat Sheets</Link>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -102,7 +122,7 @@ export default function Home() {
         <p className="max-w-2xl text-lg md:text-xl mb-8">
           Vertex helps students and professionals explore career roadmaps, take quizzes, solve coding challenges, and track progress on one platform.
         </p>
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap justify-center">
           <Link href="/roadmaps" className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition">
             Explore Roadmaps
           </Link>

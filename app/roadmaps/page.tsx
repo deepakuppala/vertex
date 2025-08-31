@@ -7,7 +7,7 @@ const roadmaps = [
   // 1. Frontend Developer
   {
     role: "Frontend Developer",
-    img: "web-design.png",
+    img: "https://cdn.simpleicons.org/html5/E34F26",
     youtube: "https://www.youtube.com/watch?v=Ke90Tje7VS0",
     steps: [
       "Day 1-10: HTML, CSS, JavaScript basics and responsive design",
@@ -24,7 +24,7 @@ const roadmaps = [
   // 2. Backend Developer
   {
     role: "Backend Developer",
-    img: "https://img.icons8.com/color/64/000000/backend.png",
+    img: "https://cdn.simpleicons.org/node.js/339933",
     youtube: "https://www.youtube.com/watch?v=Q33KBiDriJY",
     steps: [
       "Day 1-10: Learn Node.js/Java/Python basics and environment setup",
@@ -41,7 +41,7 @@ const roadmaps = [
   // 3. Full Stack Developer
   {
     role: "Full Stack Developer",
-    img: "https://img.icons8.com/color/64/000000/full-stack.png",
+    img: "https://cdn.simpleicons.org/javascript/F7DF1E",
     youtube: "https://www.youtube.com/watch?v=4xC1bCNqD3Q",
     steps: [
       "Day 1-10: Frontend basics (HTML, CSS, JS) + mini project",
@@ -58,7 +58,7 @@ const roadmaps = [
   // 4. Data Scientist
   {
     role: "Data Scientist",
-    img: "https://img.icons8.com/color/64/000000/data-science.png",
+    img: "https://cdn.simpleicons.org/python/3776AB",
     youtube: "https://www.youtube.com/watch?v=ua-CiDNNj30",
     steps: [
       "Day 1-10: Python/R basics, NumPy, Pandas",
@@ -75,7 +75,7 @@ const roadmaps = [
   // 5. Machine Learning Engineer
   {
     role: "Machine Learning Engineer",
-    img: "https://img.icons8.com/color/64/000000/machine-learning.png",
+    img: "https://cdn.simpleicons.org/tensorflow/FF6F00",
     youtube: "https://www.youtube.com/watch?v=Gv9_4yMHFhI",
     steps: [
       "Day 1-10: ML fundamentals and math review (linear algebra, probability)",
@@ -92,7 +92,7 @@ const roadmaps = [
   // 6. AI Researcher
   {
     role: "AI Researcher",
-    img: "https://img.icons8.com/color/64/000000/artificial-intelligence.png",
+    img: "https://cdn.simpleicons.org/openai/412991",
     youtube: "https://www.youtube.com/watch?v=aircAruvnKk",
     steps: [
       "Day 1-10: Advanced math (linear algebra, probability, statistics)",
@@ -109,7 +109,7 @@ const roadmaps = [
   // 7. DevOps Engineer
   {
     role: "DevOps Engineer",
-    img: "https://img.icons8.com/color/64/000000/devops.png",
+    img: "https://cdn.simpleicons.org/docker/2496ED",
     youtube: "https://www.youtube.com/watch?v=6QOOZfYmrY0",
     steps: [
       "Day 1-10: Linux fundamentals, scripting, version control (Git)",
@@ -126,7 +126,7 @@ const roadmaps = [
   // 8. UI/UX Designer
   {
     role: "UI/UX Designer",
-    img: "https://img.icons8.com/color/64/000000/ui.png",
+    img: "https://cdn.simpleicons.org/figma/F24E1E",
     youtube: "https://www.youtube.com/watch?v=1Rq2NnsbyAw",
     steps: [
       "Day 1-10: Learn design principles, color theory, typography",
@@ -143,7 +143,7 @@ const roadmaps = [
   // 9. Blockchain Developer
   {
     role: "Blockchain Developer",
-    img: "https://img.icons8.com/color/64/000000/blockchain.png",
+    img: "https://cdn.simpleicons.org/ethereum/3C3C3D",
     youtube: "https://www.youtube.com/watch?v=SSo_EIwHSd4",
     steps: [
       "Day 1-10: Blockchain fundamentals & cryptography basics",
@@ -177,7 +177,7 @@ const roadmaps = [
   // 11. Mobile App Developer
   {
     role: "Mobile App Developer (Android/iOS)",
-    img: "https://img.icons8.com/color/64/000000/mobile-app.png",
+    img: "https://cdn.simpleicons.org/android/3DDC84",
     youtube: "https://www.youtube.com/watch?v=0-S5a0eXPoc",
     steps: [
       "Day 1-10: Java/Kotlin or Swift basics",
@@ -211,7 +211,7 @@ const roadmaps = [
   // 13. Data Engineer
   {
     role: "Data Engineer",
-    img: "https://img.icons8.com/color/64/000000/data-in-both-directions.png",
+    img: "https://cdn.simpleicons.org/apache/green",
     youtube: "https://www.youtube.com/watch?v=0g3z8kKJcOE",
     steps: [
       "Day 1-10: SQL, databases, ETL concepts",
@@ -228,7 +228,7 @@ const roadmaps = [
   // 14. Game Developer
   {
     role: "Game Developer",
-    img: "https://img.icons8.com/color/64/000000/game-controller.png",
+    img: "https://cdn.simpleicons.org/unity/000000",
     youtube: "https://www.youtube.com/watch?v=2a2aAOA9Mro",
     steps: [
       "Day 1-10: Game engine basics (Unity/Unreal), C# or C++ basics",
@@ -245,7 +245,7 @@ const roadmaps = [
   // 15. AR/VR Developer
   {
     role: "AR/VR Developer",
-    img: "https://img.icons8.com/color/64/000000/virtual-reality.png",
+    img: "https://cdn.simpleicons.org/oculus/007AFF",
     youtube: "https://www.youtube.com/watch?v=ZcThhweq0x0",
     steps: [
       "Day 1-10: AR/VR fundamentals, Unity/Unreal basics",
@@ -262,7 +262,7 @@ const roadmaps = [
   // 16. Robotics Engineer
   {
     role: "Robotics Engineer",
-    img: "https://img.icons8.com/color/64/000000/robot-2.png",
+    img: "https://cdn.simpleicons.org/arduino/00979D",
     youtube: "https://www.youtube.com/watch?v=go0i44H9B8U",
     steps: [
       "Day 1-10: Robotics fundamentals & electronics basics",
@@ -296,7 +296,7 @@ const roadmaps = [
   // 18. SEO & Digital Marketing Specialist
   {
     role: "SEO & Digital Marketing Specialist",
-    img: "https://img.icons8.com/color/64/000000/seo.png",
+    img: "https://cdn.simpleicons.org/googleads/4285F4",
     youtube: "https://www.youtube.com/watch?v=QH2-TGUlwu4",
     steps: [
       "Day 1-10: Marketing fundamentals & SEO basics",
@@ -307,47 +307,49 @@ const roadmaps = [
       "Day 51-60: Social media marketing basics",
       "Day 61-70: Paid campaigns (Google Ads, Meta Ads)",
       "Day 71-80: Email marketing & automation",
-      "Day 81-90: Build portfolio & case studies",
+      "Day 81-90: Final marketing campaign project",
     ],
   },
   // 19. Product Manager
   {
     role: "Product Manager",
-    img: "https://img.icons8.com/color/64/000000/product-management.png",
-    youtube: "https://www.youtube.com/watch?v=rR54k6z4y_M",
+    img: "https://cdn.simpleicons.org/trello/0052CC",
+    youtube: "https://www.youtube.com/watch?v=k8u3oM0xTdw",
     steps: [
-      "Day 1-10: Product management fundamentals & roadmap planning",
-      "Day 11-20: Market research & user personas",
-      "Day 21-30: Requirement gathering & user stories",
-      "Day 31-40: Agile, Scrum, and Kanban basics",
-      "Day 41-50: Product design and prototyping",
-      "Day 51-60: Metrics, analytics, KPIs",
-      "Day 61-70: Stakeholder communication & collaboration",
-      "Day 71-80: Product launch strategies",
-      "Day 81-90: Case study and portfolio",
+      "Day 1-10: Product management fundamentals & market research",
+      "Day 11-20: Requirement gathering & user stories",
+      "Day 21-30: Wireframing & prototyping",
+      "Day 31-40: Roadmapping & prioritization",
+      "Day 41-50: Agile & Scrum basics",
+      "Day 51-60: Stakeholder management",
+      "Day 61-70: Analytics & metrics",
+      "Day 71-80: Go-to-market strategy",
+      "Day 81-90: Launch & post-launch analysis",
     ],
   },
-  // 20. Business Analyst
+  // 20. QA Engineer
   {
-    role: "Business Analyst",
-    img: "https://img.icons8.com/color/64/000000/business-analytics.png",
-    youtube: "https://www.youtube.com/watch?v=5GvC5bMzvVI",
+    role: "QA Engineer",
+    img: "https://cdn.simpleicons.org/selenium/43B02A",
+    youtube: "https://www.youtube.com/watch?v=5XQL5FwTg4A",
     steps: [
-      "Day 1-10: Basics of business analysis & requirements gathering",
-      "Day 11-20: Process modeling & workflow diagrams",
-      "Day 21-30: Data analysis & visualization",
-      "Day 31-40: SQL and basic database concepts",
-      "Day 41-50: Agile/Scrum methodologies",
-      "Day 51-60: Stakeholder interviews & documentation",
-      "Day 61-70: Business process improvement",
-      "Day 71-80: Tools (Excel, Tableau, Power BI)",
-      "Day 81-90: Final business analysis project",
+      "Day 1-10: QA fundamentals, testing types & SDLC",
+      "Day 11-20: Manual testing basics, test cases",
+      "Day 21-30: Bug tracking & reporting",
+      "Day 31-40: Automation basics (Selenium, Cypress)",
+      "Day 41-50: API testing basics (Postman, RestAssured)",
+      "Day 51-60: CI/CD integration & test pipelines",
+      "Day 61-70: Performance & security testing basics",
+      "Day 71-80: Advanced automation frameworks",
+      "Day 81-90: Capstone QA project",
     ],
   },
 ];
 
 export default function RoadmapPage() {
   const [openRole, setOpenRole] = useState<number | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const roleColors = [
     "from-blue-400 to-blue-600",
     "from-green-400 to-green-600",
@@ -362,27 +364,50 @@ export default function RoadmapPage() {
   return (
     <div className="min-h-screen bg-gray-100 pb-12">
       {/* Navbar */}
-      <nav className="flex justify-between items-center px-8 py-4 bg-blue-600 text-white shadow">
-        <h1 className="text-2xl font-bold">VerteX</h1>
-        <div className="space-x-8">
-          <Link href="/" className="hover:underline">Home</Link>
-          <Link href="/roadmaps" className="hover:underline">Roadmaps</Link>
-          <Link href="/internships" className="hover:underline">Internships</Link>
-          <Link href="/certifications" className="hover:underline">Certifications</Link>
-          <Link href="/cheatsheets" className="hover:underline">Cheat Sheets</Link>
+      <nav className="fixed w-full z-50 top-0 left-0 bg-blue-600 text-white shadow">
+        <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold">VerteX</h1>
+
+          {/* Desktop Links */}
+          <div className="hidden md:flex space-x-8">
+            <Link href="/" className="hover:underline">Home</Link>
+            <Link href="/roadmaps" className="hover:underline">Roadmaps</Link>
+            <Link href="/internships" className="hover:underline">Internships</Link>
+            <Link href="/certifications" className="hover:underline">Certifications</Link>
+            <Link href="/cheatsheets" className="hover:underline">Cheat Sheets</Link>
+          </div>
+
+          {/* Mobile Hamburger */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="px-3 py-2 border rounded text-white border-white hover:bg-blue-500 transition"
+            >
+              ☰
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-blue-600 px-4 py-2 space-y-2">
+            <Link href="/" className="block hover:underline">Home</Link>
+            <Link href="/roadmaps" className="block hover:underline">Roadmaps</Link>
+            <Link href="/internships" className="block hover:underline">Internships</Link>
+            <Link href="/certifications" className="block hover:underline">Certifications</Link>
+            <Link href="/cheatsheets" className="block hover:underline">Cheat Sheets</Link>
+          </div>
+        )}
       </nav>
 
       {/* Roadmaps Section */}
-      <section id="roadmaps" className="px-8 py-12">
+      <section id="roadmaps" className="px-8 py-32">
         <h2 className="text-3xl font-bold mb-6 text-gray-800 text-center">Career Roadmaps</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {roadmaps.map((roadmap, index) => (
             <div
               key={index}
-              className={`bg-gradient-to-br p-6 rounded-xl shadow-xl cursor-pointer transition transform hover:scale-105 hover:shadow-2xl ${
-                roleColors[index % roleColors.length]
-              } relative`}
+              className={`bg-gradient-to-br p-6 rounded-xl shadow-xl cursor-pointer transition transform hover:scale-105 hover:shadow-2xl ${roleColors[index % roleColors.length]} relative`}
               onClick={() => setOpenRole(openRole === index ? null : index)}
             >
               <div className="flex items-center gap-4">
@@ -392,9 +417,7 @@ export default function RoadmapPage() {
                 <h3 className="text-xl font-bold text-white">{roadmap.role}</h3>
               </div>
               <div
-                className={`overflow-hidden transition-all duration-500 mt-4 text-white ${
-                  openRole === index ? "max-h-[2000px]" : "max-h-0"
-                }`}
+                className={`overflow-hidden transition-all duration-500 mt-4 text-white ${openRole === index ? "max-h-[2000px]" : "max-h-0"}`}
               >
                 <ul className="list-disc list-inside space-y-1 mb-4">
                   {roadmap.steps.map((step, i) => (
