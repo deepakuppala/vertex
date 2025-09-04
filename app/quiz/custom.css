@@ -1,0 +1,404 @@
+/* =========================
+   custom.css (fixed version)
+   ========================= */
+
+/* General layout */
+.min-h-screen {
+  min-height: 100vh;
+}
+.bg-gradient-to-br {
+  background: linear-gradient(to bottom right, #ebf8ff, #e0e7ff);
+}
+.from-blue-50 {
+  background-color: #eff6ff;
+}
+.to-indigo-50 {
+  background-color: #eef2ff;
+}
+.flex {
+  display: flex;
+}
+.items-start {
+  align-items: flex-start;
+}
+.items-center {
+  align-items: center;
+}
+.items-end {
+  align-items: flex-end;
+}
+.justify-center {
+  justify-content: center;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+.m-6 {
+  margin: 1.5rem;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+}
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+.lg\:grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.gap-8 {
+  gap: 2rem;
+}
+
+/* Cards */
+.bg-white {
+  background: #fff;
+}
+.rounded-2xl {
+  border-radius: 1rem;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.shadow-md {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.shadow-lg {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.shadow-inner {
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+}
+.border {
+  border: 1px solid #e5e7eb;
+}
+.border-t {
+  border-top: 1px solid #e5e7eb;
+}
+.border-gray-200 {
+  border-color: #e5e7eb;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Typography */
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.font-medium {
+  font-weight: 500;
+}
+
+/* Text colors (fixed for visibility) */
+.text-gray-800 {
+  color: #1f2937;
+}
+.text-gray-600 {
+  color: #4b5563;
+}
+.text-gray-500 {
+  color: #6b7280;
+}
+.text-gray-400 {
+  color: #9ca3af;
+}
+.text-white {
+  color: #ffffff;
+}
+.text-blue-600 {
+  color: #2563eb;
+}
+.text-green-600 {
+  color: #16a34a;
+}
+.text-black {
+  color: #111111;
+}
+
+/* Buttons */
+button,
+a {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #111 !important;   /* make sure text is visible */
+}
+.hover\:bg-blue-700:hover {
+  background: #1d4ed8;
+  color: #fff; /* keep contrast */
+}
+.hover\:bg-gray-50:hover {
+  background: #f9fafb;
+}
+.hover\:bg-gray-200:hover {
+  background: #e5e7eb;
+}
+.hover\:brightness-90:hover {
+  filter: brightness(0.9);
+}
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+.transition {
+  transition: all 0.2s ease;
+}
+
+/* Disabled buttons */
+button:disabled {
+  color: #666 !important;
+  background-color: #ddd !important;
+  border: 1px solid #ccc !important;
+  cursor: not-allowed;
+  opacity: 1 !important;
+}
+
+/* Spacing utilities */
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+.space-y-5 > * + * {
+  margin-top: 1.25rem;
+}
+.space-y-3 > * + * {
+  margin-top: 0.75rem;
+}
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+.space-x-3 > * + * {
+  margin-left: 0.75rem;
+}
+.mt-6 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-3 { margin-top: 0.75rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+
+/* Inputs */
+input,
+select {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  outline: none;
+  color: #111 !important;             /* force dark text */
+  background-color: #fff !important;  /* white bg */
+  opacity: 1 !important;
+}
+input:focus,
+select:focus {
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 2px rgba(191, 219, 254, 0.7);
+}
+input::placeholder,
+select::placeholder {
+  color: #555 !important; /* darker placeholder */
+  opacity: 1 !important;
+}
+
+/* Progress bar */
+.bg-gray-200 { background: #e5e7eb; }
+.bg-gray-100 { background: #f3f4f6; }
+.bg-gray-300 { background: #d1d5db; }
+.bg-blue-600 { background: #2563eb; }
+.bg-green-600 { background: #16a34a; }
+.bg-green-700 { background: #15803d; }
+.bg-sky-500  { background: #0ea5e9; }
+.bg-amber-400{ background: #fbbf24; }
+.bg-green-400{ background: #4ade80; }
+.bg-blue-400 { background: #60a5fa; }
+
+/* Rounded badges */
+.rounded-full {
+  border-radius: 9999px;
+}
+/* custom.css */
+
+/* Ensure all text is visible */
+button, a, input, select, p, span, h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+  visibility: visible !important;
+}
+
+/* Prevent invisible buttons */
+button, a {
+  position: relative;
+  z-index: 10;
+}
+
+/* Fix Tailwind override for text-white on light bg */
+.text-white {
+  text-shadow: 0 0 3px rgba(0,0,0,0.5); /* makes it readable on white bg */
+}
+
+/* Ensure certificate preview content shows */
+.certificate-preview-text {
+  color: #e20c0c !important;
+  font-weight: 600;
+}
+.text-brown {
+  color: brown !important;
+  font-weight: bold;
+}
+.certificate-title {
+  font-size: 1.125rem;   /* same as text-lg */
+  font-weight: 600;      /* same as font-semibold */
+  color: #1f2937;        /* Tailwind's gray-800 (dark gray) */
+}
+/* Fix for Start - Enter details */
+h2.text-xl.text-brown {
+  font-weight: bold;
+  color: brown !important;
+}
+
+/* Fix for Certificate Preview */
+.certificate-title {
+  font-size: 1.25rem;   /* text-lg */
+  font-weight: 600;     /* font-semibold */
+  color: #5C4033;       /* dark brown */
+  margin-bottom: 0.75rem;
+}
+
+/* Quiz Question styling */
+.space-y-5 .border .font-medium {
+  font-size: 1.125rem;   /* text-lg */
+  font-weight: 600;
+  color: #1f2937;        /* gray-800 */
+}
+
+/* Quiz Option buttons */
+button.bg-gray-100,
+button.bg-gray-200 {
+  font-size: 0.95rem;
+  color: #0860ee;        /* gray-700 */
+}
+
+button.bg-blue-600 {
+  font-weight: 600;
+}
+/* Fix main quiz title */
+.quiz-title {
+  color: #5C4033 !important;   /* dark brown */
+  font-weight: 700 !important;
+  font-size: 1.25rem !important; /* same as text-xl */
+  margin-bottom: 0.75rem;
+}
+
+/* Fix quiz subtitle */
+.quiz-subtitle {
+  color: #374151 !important;   /* darker gray */
+  font-size: 0.95rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Fix certificate preview title */
+.certificate-title {
+  color: #5C4033 !important;   /* brown */
+  font-weight: 700 !important;
+  font-size: 1.125rem !important; /* ~text-lg */
+  margin-bottom: 0.5rem;
+}
+/* custom.css */
+
+/* Header */
+.result-header h3 {
+  color: #1e3a8a; /* Deep Blue */
+  font-size: 1.8rem;
+}
+
+.result-header p {
+  color: #374151; /* Gray-700 */
+  font-size: 1rem;
+}
+
+/* Result Box */
+.result-box {
+  border: 2px solid #2563eb;
+  border-radius: 12px;
+  padding: 16px;
+  background: #f0f9ff; /* light blue */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.result-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Labels */
+.result-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 6px;
+}
+
+/* Score */
+.result-score {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+.result-box.grade {
+  border: 2px solid #16a34a; /* green border */
+  border-radius: 12px;
+  padding: 16px;
+  background: #f0fdf4; /* light green background */
+}
+
+.result-box.grade p.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #15803d;
+  margin-bottom: 6px;
+}
+
+.result-box.grade p.value {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #065f46;
+}
+
+.badge-container {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.badge-text {
+  font-size: 0.85rem;
+  color: #4b5563;
+}

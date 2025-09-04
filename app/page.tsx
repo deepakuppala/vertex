@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { MdDashboard } from "react-icons/md"; // ✅ Dashboard icon
 
 // --- Home Component ---
 export default function Home() {
@@ -18,181 +19,138 @@ export default function Home() {
       icon: "🧩",
       color: "from-green-400 to-green-600",
       interactive: true,
+      link: "/quiz", // ✅ added link
     },
     {
       title: "Coding Challenges & Practice",
       desc: "Solve mini coding challenges and DSA problems to sharpen your skills and track progress.",
       icon: "💻",
       color: "from-purple-400 to-purple-600",
+      link: "/challenges",
     },
   ];
 
-  // Dashboard state
   const [dashboardOpen, setDashboardOpen] = useState(false);
-  const dashboardItems = [
-    { title: "Frontend Roadmap", progress: 70 },
-    { title: "Data Science Path", progress: 40 },
-    { title: "AI/ML Projects", progress: 20 },
-  ];
-
-  // Quiz state
-  const [quizOpen, setQuizOpen] = useState(false);
-  const [quizStep, setQuizStep] = useState(0);
-  const [quizAnswer, setQuizAnswer] = useState<number[]>([]);
-
-  const quizQuestions = [
-    { question: "Do you enjoy designing websites?", options: ["Yes", "No"] },
-    { question: "Do you like working with data?", options: ["Yes", "No"] },
-    { question: "Are you interested in AI/ML?", options: ["Yes", "No"] },
-  ];
-
-  const roles = ["Frontend Developer", "Backend Developer", "AI/ML Engineer", "Data Scientist", "Full-Stack Developer"];
-  const roleScores: { [key: string]: number[] } = {
-    "Frontend Developer": [0, 8, 13],
-    "Backend Developer": [3, 4, 6, 14],
-    "AI/ML Engineer": [2, 10, 12],
-    "Data Scientist": [1, 7, 11, 12],
-    "Full-Stack Developer": [0, 3, 5, 6, 13, 14],
-  };
-
-  const calculateResult = () => {
-    const scores: { [key: string]: number } = {};
-    roles.forEach((role) => (scores[role] = 0));
-    quizAnswer.forEach((ans, idx) => {
-      Object.keys(roleScores).forEach((role) => {
-        if (roleScores[role].includes(idx) && ans === 0) scores[role] += 1;
-      });
-    });
-    const sortedRoles = Object.entries(scores).sort((a, b) => b[1] - a[1]).map((entry) => entry[0]);
-    return sortedRoles.slice(0, 2).join(" & ");
-  };
 
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-900 relative">
-      {/* Navbar */}
-      <nav className="fixed w-full z-50 top-0 left-0 bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
-          {/* Logo with subtitle */}
-          <div className="flex flex-col">
-            <h1 className="text-3xl font-bold text-blue-600">VerteX</h1>
-            <span className="text-sm text-gray-500">by Deepak Uppala</span>
-          </div>
-
-          {/* Desktop Links */}
-          <div className="hidden md:flex space-x-6">
-            <Link href="/" className="hover:text-blue-600 font-medium transition">Home</Link>
-            <Link href="/roadmaps" className="hover:text-blue-600 font-medium transition">Roadmaps</Link>
-            <Link href="/internships" className="hover:text-blue-600 font-medium transition">Internships</Link>
-            <Link href="/certifications" className="hover:text-blue-600 font-medium transition">Certifications</Link>
-            <Link href="/cheatsheets" className="hover:text-blue-600 font-medium transition">Cheat Sheets</Link>
-          </div>
-
-          {/* Mobile Hamburger */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setDashboardOpen(!dashboardOpen)}
-              className="px-3 py-2 border rounded text-blue-600 border-blue-600 hover:bg-blue-100 transition mr-2"
-            >
-              ☰
-            </button>
-            <button
-              onClick={() => setDashboardOpen(!dashboardOpen)}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-            >
-              📊 Dashboard
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {dashboardOpen && (
-          <div className="md:hidden bg-white shadow-md px-4 py-2 space-y-2">
-            <Link href="/" className="block hover:text-blue-600 font-medium transition">Home</Link>
-            <Link href="/roadmaps" className="block hover:text-blue-600 font-medium transition">Roadmaps</Link>
-            <Link href="/internships" className="block hover:text-blue-600 font-medium transition">Internships</Link>
-            <Link href="/certifications" className="block hover:text-blue-600 font-medium transition">Certifications</Link>
-            <Link href="/cheatsheets" className="block hover:text-blue-600 font-medium transition">Cheat Sheets</Link>
-          </div>
-        )}
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative flex flex-col justify-center items-center text-center py-32 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">Explore. Learn. Achieve.</h1>
-        <p className="max-w-2xl text-lg md:text-xl mb-8">
-          Vertex helps students and professionals explore career roadmaps, take quizzes, solve coding challenges, and track progress on one platform.
-        </p>
-        <div className="flex gap-4 flex-wrap justify-center">
-          <Link href="/roadmaps" className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition">
-            Explore Roadmaps
-          </Link>
-          <Link href="/cheatsheets" className="px-6 py-3 bg-blue-700 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-800 transition">
-            Access Cheat Sheets
-          </Link>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 px-8 max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">🌟 Key Features</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {features.map((feature, idx) => (
-            <div
-              key={idx}
-              className={`p-8 rounded-2xl text-white shadow-xl hover:scale-105 transform transition-all bg-gradient-to-br ${feature.color} cursor-pointer`}
-              onClick={() => { if (feature.interactive) setQuizOpen(!quizOpen); }}
-            >
-              <div className="text-5xl mb-4">{feature.icon}</div>
-              <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-              <p>{feature.desc}</p>
+    <main className="min-h-screen bg-gray-50 text-gray-900 relative flex">
+      {/* Left: Main Content */}
+      <div className="flex-1">
+        {/* Navbar */}
+        <nav className="fixed w-full z-50 top-0 left-0 bg-white shadow-md">
+          <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+            <div className="flex flex-col">
+              <h1 className="text-3xl font-bold text-blue-600">VerteX</h1>
+              <span className="text-sm text-gray-500">by Deepak Uppala</span>
             </div>
-          ))}
-        </div>
 
-        {/* Interactive Quiz */}
-        {quizOpen && (
-          <div className="mt-12 p-8 bg-gray-100 rounded-xl shadow-lg max-w-2xl mx-auto">
-            {quizStep < quizQuestions.length ? (
-              <div>
-                <h3 className="text-xl font-semibold mb-4">{quizQuestions[quizStep].question}</h3>
-                <div className="flex gap-4 flex-wrap">
-                  {quizQuestions[quizStep].options.map((opt, i) => (
-                    <button
-                      key={i}
-                      className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-                      onClick={() => {
-                        setQuizAnswer([...quizAnswer, i]);
-                        setQuizStep(quizStep + 1);
-                      }}
-                    >
-                      {opt}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <div className="text-center mt-4">
-                <h3 className="text-2xl font-bold">Recommended Careers:</h3>
-                <p className="text-xl mt-2 text-blue-600">{calculateResult()}</p>
-                <button
-                  className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-                  onClick={() => {
-                    setQuizStep(0);
-                    setQuizAnswer([]);
-                  }}
-                >
-                  Retake Quiz
-                </button>
-              </div>
-            )}
+            {/* Desktop Links */}
+            <div className="hidden md:flex space-x-6 items-center">
+              <Link href="/" className="hover:text-blue-600 font-medium transition">
+                Home
+              </Link>
+              <Link href="/roadmaps" className="hover:text-blue-600 font-medium transition">
+                Roadmaps
+              </Link>
+              <Link href="/internships" className="hover:text-blue-600 font-medium transition">
+                Internships
+              </Link>
+              <Link href="/certifications" className="hover:text-blue-600 font-medium transition">
+                Certifications
+              </Link>
+              <Link href="/cheatsheets" className="hover:text-blue-600 font-medium transition">
+                Cheat Sheets
+              </Link>
+
+              {/* Dashboard Button */}
+              <button
+                onClick={() => setDashboardOpen(!dashboardOpen)}
+                className="ml-4 p-2 rounded-lg hover:bg-gray-100 transition"
+              >
+                <MdDashboard size={26} className="text-blue-600" />
+              </button>
+            </div>
           </div>
-        )}
-      </section>
+        </nav>
 
-      {/* Footer */}
-      <footer className="py-12 bg-blue-600 text-center text-white">
-        <p>© {new Date().getFullYear()} Vertex. All rights reserved Built by Deepak Uppala</p>
-      </footer>
+        {/* Hero Section */}
+        <section className="relative flex flex-col justify-center items-center text-center py-32 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            Explore. Learn. Achieve.
+          </h1>
+          <p className="max-w-2xl text-lg md:text-xl mb-8">
+            Vertex helps students and professionals explore career roadmaps, take quizzes, solve coding challenges, and track progress on one platform.
+          </p>
+          <div className="flex gap-4 flex-wrap justify-center">
+            <Link
+              href="/roadmaps"
+              className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition"
+            >
+              Explore Roadmaps
+            </Link>
+            <Link
+              href="/cheatsheets"
+              className="px-6 py-3 bg-blue-700 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-800 transition"
+            >
+              Access Cheat Sheets
+            </Link>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-20 px-8 max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+            🌟 Key Features
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {features.map((feature, idx) => {
+              const content = (
+                <div
+                  key={idx}
+                  className={`p-8 rounded-2xl text-white shadow-xl hover:scale-105 transform transition-all bg-gradient-to-br ${feature.color} cursor-pointer`}
+                >
+                  <div className="text-5xl mb-4">{feature.icon}</div>
+                  <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
+                  <p>{feature.desc}</p>
+                </div>
+              );
+
+              return feature.link ? (
+                <Link href={feature.link} key={idx}>
+                  {content}
+                </Link>
+              ) : (
+                content
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="py-12 bg-blue-600 text-center text-white">
+          <p>© {new Date().getFullYear()} Vertex. All rights reserved. Built by Deepak Uppala</p>
+        </footer>
+      </div>
+
+      {/* Right: Dashboard Sidebar */}
+      {dashboardOpen && (
+        <aside className="w-64 bg-white border-l border-gray-200 shadow-lg p-6 fixed right-0 top-0 h-full flex flex-col z-50">
+          <h2 className="text-xl font-bold mb-6 text-blue-600">📊 Dashboard</h2>
+          <nav className="flex flex-col space-y-4">
+            <Link href="/profile" className="hover:text-blue-600 font-medium">My Profile</Link>
+            <Link href="/progress" className="hover:text-blue-600 font-medium">Progress Tracker</Link>
+            <Link href="/certificates" className="hover:text-blue-600 font-medium">Certificates</Link>
+            <Link href="/projects" className="hover:text-blue-600 font-medium">Projects</Link>
+            <Link href="/settings" className="hover:text-blue-600 font-medium">Settings</Link>
+          </nav>
+          <button
+            onClick={() => setDashboardOpen(false)}
+            className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          >
+            Close
+          </button>
+        </aside>
+      )}
     </main>
   );
 }
