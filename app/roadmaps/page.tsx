@@ -373,6 +373,10 @@ export default function RoadmapPage() {
             <Link href="/" className="hover:underline">Home</Link>
             <Link href="/roadmaps" className="hover:underline">Roadmaps</Link>
             <Link href="/internships" className="hover:underline">Internships</Link>
+             <Link href="/resume" className="hover:underline">ResumeBuilder</Link>
+             <Link href="/interview" className="hover:underline">Interviewprep</Link>
+             <Link href="/projects" className="hover:underline">Projects</Link>
+            <Link href="/hackathon" className="hover:underline">Hackathons</Link>
             <Link href="/certifications" className="hover:underline">Certifications</Link>
             <Link href="/cheatsheets" className="hover:underline">Cheat Sheets</Link>
           </div>

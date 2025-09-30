@@ -20,7 +20,7 @@ interface Challenge {
   hint?: string;
 }
 
-// Sample 10+ challenges (expandable to 30+)
+// Sample challenges
 const sampleChallenges: Challenge[] = [
   {
     name: "Sum of Two Numbers",
@@ -48,13 +48,19 @@ const sampleChallenges: Challenge[] = [
     tags: ["String", "Easy"],
     hint: "Use slicing: s[::-1]",
   },
-  // Add more challenges here up to 30
+  // Add more challenges
 ];
 
+const languageMap: Record<string, string> = {
+  "71": "python",
+  "62": "java",
+  "63": "c",
+  "64": "cpp",
+  // Extend as needed
+};
+
 export default function Challenges() {
-  const [currentChallenge, setCurrentChallenge] = useState<Challenge | null>(
-    sampleChallenges[0]
-  );
+  const [currentChallenge, setCurrentChallenge] = useState<Challenge | null>(sampleChallenges[0]);
   const [code, setCode] = useState(currentChallenge?.codeStarter || "");
   const [results, setResults] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
@@ -107,21 +113,17 @@ export default function Challenges() {
         ]);
 
         // Streak tracker
-        if (newResults.every((r) => typeof r === "string" && r.startsWith("✅"))) {
+        if (newResults.every((r) => r.startsWith("✅"))) {
           setStreak(streak + 1);
-          // Award badge for streak milestone
-          if ((streak + 1) % 3 === 0) {
-            setBadges([...badges, `🏆 ${streak + 1}-Day Streak!`]);
-          }
+          if ((streak + 1) % 3 === 0) setBadges([...badges, `🏆 ${streak + 1}-Day Streak!`]);
         } else {
           setStreak(0);
         }
 
-        // SimpliTC: custom feature to summarize test case results
+        // SimpliTC summary
         const passedCount = newResults.filter((r) => r.startsWith("✅")).length;
         const failedCount = newResults.filter((r) => r.startsWith("❌")).length;
         setSimpliTC(`📊 SimpliTC: ✅ ${passedCount} | ❌ ${failedCount}`);
-
       } else if (data.error) {
         setResults([`Backend error: ${data.error}\nDetails: ${data.details || ""}`]);
       } else {
@@ -134,62 +136,43 @@ export default function Challenges() {
     setLoading(false);
   };
 
-  const panelStyle = {
+  const panelStyle: React.CSSProperties = {
     background: "#1e1e2f",
-    borderRadius: "8px",
-    padding: "20px",
+    borderRadius: 8,
+    padding: 20,
     color: "#fff",
     boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
   };
-  const buttonStyle = (bg: string) => ({
+
+  const buttonStyle = (bg: string): React.CSSProperties => ({
     background: bg,
     color: "#fff",
     border: "none",
-    borderRadius: "6px",
+    borderRadius: 6,
     padding: "10px 20px",
     cursor: "pointer",
-    fontSize: "14px",
+    fontSize: 14,
     transition: "0.2s",
-    marginRight: "10px",
+    marginRight: 10,
   });
+
   const getResultColor = (res: string) =>
     res.startsWith("✅") ? "#0f0" : res.startsWith("❌") ? "#f55" : "#aaa";
 
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background: "#121212",
-        padding: "20px",
-        fontFamily: "Arial, sans-serif",
-        color: "#fff",
-      }}
-    >
+    <main style={{ minHeight: "100vh", background: "#121212", padding: 20, fontFamily: "Arial, sans-serif", color: "#fff" }}>
       {/* Navbar */}
-      <nav
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginBottom: "20px",
-        }}
-      >
-        <h1 style={{ fontSize: "28px", fontWeight: "bold" }}>Vertex</h1>
+      <nav style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20 }}>
+        <h1 style={{ fontSize: 28, fontWeight: "bold" }}>Vertex</h1>
         <div>🔥 Streak: {streak} | 🏅 Badges: {badges.join(" ")}</div>
       </nav>
 
-      <h2 style={{ fontSize: "32px", fontWeight: "bold", marginBottom: "20px" }}>
-        ⚡ Coding Challenges
-      </h2>
+      <h2 style={{ fontSize: 32, fontWeight: "bold", marginBottom: 20 }}>⚡ Coding Challenges</h2>
 
       {/* Challenge selection */}
-      <div style={{ display: "flex", gap: "10px", marginBottom: "20px", flexWrap: "wrap" }}>
+      <div style={{ display: "flex", gap: 10, marginBottom: 20, flexWrap: "wrap" }}>
         {sampleChallenges.map((ch) => (
-          <button
-            key={ch.name}
-            onClick={() => selectChallenge(ch)}
-            style={buttonStyle("#007bff")}
-          >
+          <button key={ch.name} onClick={() => selectChallenge(ch)} style={buttonStyle("#007bff")}>
             {ch.name}
           </button>
         ))}
@@ -197,31 +180,22 @@ export default function Challenges() {
 
       {currentChallenge && (
         <>
-          <div style={{ ...panelStyle, marginBottom: "20px" }}>
+          {/* Challenge Details */}
+          <div style={{ ...panelStyle, marginBottom: 20 }}>
             <h2>{currentChallenge.name}</h2>
-            <p>
-              <strong>Difficulty:</strong> {currentChallenge.difficulty}
-            </p>
-            <p>
-              <strong>Tags:</strong> {currentChallenge.tags.join(", ")}
-            </p>
-            <p>
-              <strong>Description:</strong> {currentChallenge.description}
-            </p>
-            {currentChallenge.hint && (
-              <p>
-                <strong>Hint:</strong> {currentChallenge.hint}
-              </p>
-            )}
+            <p><strong>Difficulty:</strong> {currentChallenge.difficulty}</p>
+            <p><strong>Tags:</strong> {currentChallenge.tags.join(", ")}</p>
+            <p><strong>Description:</strong> {currentChallenge.description}</p>
+            {currentChallenge.hint && <p><strong>Hint:</strong> {currentChallenge.hint}</p>}
           </div>
 
-          <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
             {/* Editor */}
             <div style={{ flex: "1 1 500px", ...panelStyle }}>
               <h3>Code Editor</h3>
               <Editor
                 height="400px"
-                defaultLanguage={currentChallenge.language === "71" ? "python" : "javascript"}
+                defaultLanguage={languageMap[currentChallenge.language] || "python"}
                 defaultValue={currentChallenge.codeStarter}
                 theme="vs-dark"
                 value={code}
@@ -229,8 +203,8 @@ export default function Challenges() {
               />
             </div>
 
-            {/* Right panel */}
-            <div style={{ flex: "1 1 400px", display: "flex", flexDirection: "column", gap: "20px" }}>
+            {/* Right Panel */}
+            <div style={{ flex: "1 1 400px", display: "flex", flexDirection: "column", gap: 20 }}>
               <div style={panelStyle}>
                 <h3>Test Cases</h3>
                 {currentChallenge.testCases.map((tc, idx) => (
@@ -248,12 +222,12 @@ export default function Challenges() {
                     style={{
                       background: "#000",
                       color: getResultColor(res),
-                      padding: "15px",
-                      borderRadius: "6px",
-                      fontSize: "14px",
+                      padding: 15,
+                      borderRadius: 6,
+                      fontSize: 14,
                       overflowX: "auto",
                       whiteSpace: "pre-wrap",
-                      marginBottom: "10px",
+                      marginBottom: 10,
                     }}
                   >
                     {res}
@@ -262,11 +236,7 @@ export default function Challenges() {
                 {simpliTC && <p style={{ color: "#ff0", fontWeight: "bold" }}>{simpliTC}</p>}
               </div>
 
-              <button
-                onClick={runCode}
-                style={buttonStyle("#28a745")}
-                disabled={loading}
-              >
+              <button onClick={runCode} style={buttonStyle("#28a745")} disabled={loading}>
                 {loading ? "Running..." : "▶ Run Code"}
               </button>
 

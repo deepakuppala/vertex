@@ -102,13 +102,17 @@ export default function InternshipsPage() {
       {/* Navbar */}
       <nav className="flex justify-between items-center px-8 py-4 bg-blue-600 text-white shadow">
         <h1 className="text-2xl font-bold">VerteX</h1>
-        <div className="space-x-8">
-          <Link href="/" className="hover:underline">Home</Link>
-          <Link href="/roadmaps" className="hover:underline">Roadmaps</Link>
-          <Link href="/internships" className="hover:underline">Internships</Link>
-          <Link href="/certifications" className="hover:underline">Certifications</Link>
-          <Link href="/cheatsheets" className="hover:underline">Cheat Sheets</Link>
-        </div>
+         <div className="hidden md:flex space-x-8">
+            <Link href="/" className="hover:underline">Home</Link>
+            <Link href="/roadmaps" className="hover:underline">Roadmaps</Link>
+            <Link href="/internships" className="hover:underline">Internships</Link>
+             <Link href="/resume" className="hover:underline">ResumeBuilder</Link>
+             <Link href="/interview" className="hover:underline">Interviewprep</Link>
+             <Link href="/projects" className="hover:underline">Projects</Link>
+            <Link href="/hackathon" className="hover:underline">Hackathons</Link>
+            <Link href="/certifications" className="hover:underline">Certifications</Link>
+            <Link href="/cheatsheets" className="hover:underline">Cheat Sheets</Link>
+          </div>
       </nav>
 
       {/* Internships Section */}
