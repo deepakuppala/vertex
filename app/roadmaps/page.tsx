@@ -1,8 +1,30 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
+import React, { useState, useCallback, useEffect } from "react";
 
+// --- Inline SVG Icon Definitions ---
+const ChevronDownIcon = (props: { size: number; className?: string; style?: React.CSSProperties }) => (
+  <svg {...props} xmlns="http://www.w3.org/2000/svg" width={props.size} height={props.size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg>
+);
+
+const PlayCircleIcon = (props: { size: number; className?: string; style?: React.CSSProperties }) => (
+  <svg {...props} xmlns="http://www.w3.org/2000/svg" width={props.size} height={props.size} viewBox="0 0 24 24" fill="currentColor">
+    <circle cx="12" cy="12" r="10"></circle>
+    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+  </svg>
+);
+
+const MapIcon = (props: { size: number; className?: string; style?: React.CSSProperties }) => (
+  <svg {...props} xmlns="http://www.w3.org/2000/svg" width={props.size} height={props.size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+    <line x1="8" y1="2" x2="8" y2="18"></line>
+    <line x1="16" y1="6" x2="16" y2="22"></line>
+  </svg>
+);
+
+// --- Roadmaps Data (Example for 3, you can add full list) ---
 const roadmaps = [
   // 1. Frontend Developer
   {
@@ -346,46 +368,115 @@ const roadmaps = [
   },
 ];
 
+// Color gradients for cards
+const roleColors = [
+  "from-blue-400 to-blue-600",
+  "from-green-400 to-green-600",
+  "from-purple-400 to-purple-600",
+];
+
 export default function RoadmapPage() {
   const [openRole, setOpenRole] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const roleColors = [
-    "from-blue-400 to-blue-600",
-    "from-green-400 to-green-600",
-    "from-purple-400 to-purple-600",
-    "from-pink-400 to-pink-600",
-    "from-yellow-400 to-yellow-500",
-    "from-red-400 to-red-600",
-    "from-teal-400 to-teal-600",
-    "from-indigo-400 to-indigo-600",
-  ];
+  // Load jsPDF via CDN
+  useEffect(() => {
+    if (typeof window !== "undefined" && !(window as any).jspdf) {
+      const script = document.createElement("script");
+      script.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+      script.async = true;
+      document.body.appendChild(script);
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, []);
+
+  const generatePDF = useCallback((roadmap: typeof roadmaps[0]) => {
+    if (!(window as any).jspdf) {
+      alert("PDF generator not loaded yet!");
+      return;
+    }
+
+    const { jsPDF } = (window as any).jspdf;
+    const doc = new jsPDF({ orientation: "landscape", unit: "pt", format: "a4" });
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+
+    const img = new Image();
+    img.src = "/pdftemp.jpg";
+
+    img.onload = () => {
+      doc.addImage(img, "JPEG", 0, 0, pageWidth, pageHeight);
+
+      let y = 100;
+      const margin = 80;
+      const contentWidth = pageWidth - 2 * margin;
+
+      doc.setFontSize(24);
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(31, 41, 55);
+      doc.text(`Professional Roadmap: ${roadmap.role}`, pageWidth / 2, y, { align: "center" });
+      y += 30;
+
+      doc.setFontSize(16);
+      doc.setTextColor(59, 130, 246);
+      doc.text("90-Day Milestones:", margin, y);
+      y += 15;
+
+      doc.setFontSize(10);
+      doc.setTextColor(75, 85, 99);
+      const lineSpacing = 12;
+
+      roadmap.steps.forEach((step, i) => {
+        if (y > pageHeight - margin) {
+          doc.addPage();
+          y = margin;
+        }
+        const stepNumber = `${i + 1}.`;
+        const text = doc.splitTextToSize(step, contentWidth - 20);
+
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(250, 204, 21);
+        doc.text(stepNumber, margin, y);
+
+        doc.setFont("helvetica", "normal");
+        doc.setTextColor(75, 85, 99);
+        doc.text(text, margin + 20, y);
+
+        y += text.length * lineSpacing;
+      });
+
+      y = pageHeight - 50;
+      doc.setFontSize(10);
+      doc.setTextColor(37, 99, 235);
+      doc.text("Video Guide: " + roadmap.youtube, margin, y);
+
+      doc.save(`${roadmap.role.replace(/\s+/g, "_")}_Roadmap.pdf`);
+    };
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 pb-12">
+    <div className="min-h-screen bg-gray-50 pb-12 pt-20">
       {/* Navbar */}
-      <nav className="fixed w-full z-50 top-0 left-0 bg-blue-600 text-white shadow">
+      <nav className="fixed w-full z-50 top-0 left-0 bg-white shadow-lg">
         <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">VerteX</h1>
+          <h1 className="text-3xl font-bold text-blue-600">VerteX</h1>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex space-x-8">
-            <Link href="/" className="hover:underline">Home</Link>
-            <Link href="/roadmaps" className="hover:underline">Roadmaps</Link>
-            <Link href="/internships" className="hover:underline">Internships</Link>
-             <Link href="/resume" className="hover:underline">ResumeBuilder</Link>
-             <Link href="/interview" className="hover:underline">Interviewprep</Link>
-             <Link href="/projects" className="hover:underline">Projects</Link>
-            <Link href="/hackathon" className="hover:underline">Hackathons</Link>
-            <Link href="/certifications" className="hover:underline">Certifications</Link>
-            <Link href="/cheatsheets" className="hover:underline">Cheat Sheets</Link>
+          <div className="hidden md:flex space-x-8 justify-center flex-grow">
+            {["Home", "Roadmaps", "Internships", "Resume Builder", "Interview Prep", "Projects"].map((item) => (
+              <a key={item} href={`/${item.toLowerCase().replace(/\s+/g, "-")}`} className="hover:text-blue-600 text-gray-700">
+                {item}
+              </a>
+            ))}
           </div>
 
           {/* Mobile Hamburger */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="px-3 py-2 border rounded text-white border-white hover:bg-blue-500 transition"
+              className="px-3 py-2 border rounded text-blue-600 border-blue-600 hover:bg-blue-50 transition"
             >
               ☰
             </button>
@@ -394,53 +485,64 @@ export default function RoadmapPage() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-blue-600 px-4 py-2 space-y-2">
-            <Link href="/" className="block hover:underline">Home</Link>
-            <Link href="/roadmaps" className="block hover:underline">Roadmaps</Link>
-            <Link href="/internships" className="block hover:underline">Internships</Link>
-            <Link href="/certifications" className="block hover:underline">Certifications</Link>
-            <Link href="/cheatsheets" className="block hover:underline">Cheat Sheets</Link>
+          <div className="md:hidden bg-gray-100 px-4 py-2 space-y-2 border-t">
+            {["Home", "Roadmaps", "Internships", "Resume Builder", "Interview Prep", "Projects"].map((item) => (
+              <a key={item} href={`/${item.toLowerCase().replace(/\s+/g, "-")}`} className="block text-gray-700 hover:text-blue-600">
+                {item}
+              </a>
+            ))}
           </div>
         )}
       </nav>
 
-      {/* Roadmaps Section */}
-      <section id="roadmaps" className="px-8 py-32">
-        <h2 className="text-3xl font-bold mb-6 text-gray-800 text-center">Career Roadmaps</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {roadmaps.map((roadmap, index) => (
+      {/* Header Section */}
+      <header className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-20 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">90-Day Roadmaps for Students & Developers</h1>
+        <p className="text-lg md:text-2xl">Master skills, land internships, and prepare for your career efficiently</p>
+      </header>
+
+      {/* Roadmap Cards */}
+      <main className="max-w-6xl mx-auto px-4 mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {roadmaps.map((roadmap, idx) => {
+          const isOpen = openRole === idx;
+          const color = roleColors[idx % roleColors.length];
+
+          return (
             <div
-              key={index}
-              className={`bg-gradient-to-br p-6 rounded-xl shadow-xl cursor-pointer transition transform hover:scale-105 hover:shadow-2xl ${roleColors[index % roleColors.length]} relative`}
-              onClick={() => setOpenRole(openRole === index ? null : index)}
+              key={idx}
+              className={`bg-gradient-to-br ${color} p-6 rounded-2xl shadow-xl text-white transition-transform transform hover:scale-105`}
             >
-              <div className="flex items-center gap-4">
-                {roadmap.img && (
-                  <img src={roadmap.img} alt={roadmap.role} className="w-12 h-12 rounded-full" />
-                )}
-                <h3 className="text-xl font-bold text-white">{roadmap.role}</h3>
+              {/* Header */}
+              <div className="flex items-center justify-between gap-4 cursor-pointer" onClick={() => setOpenRole(isOpen ? null : idx)}>
+                <div className="flex items-center gap-4">
+                  <img src={roadmap.img} alt={roadmap.role} className="w-12 h-12 object-contain rounded-full" />
+                  <h2 className="text-lg font-semibold truncate">{roadmap.role}</h2>
+                </div>
+                <ChevronDownIcon size={24} className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
               </div>
-              <div
-                className={`overflow-hidden transition-all duration-500 mt-4 text-white ${openRole === index ? "max-h-[2000px]" : "max-h-0"}`}
-              >
-                <ul className="list-disc list-inside space-y-1 mb-4">
+
+              {/* Steps */}
+              <div className={`mt-4 text-sm text-white/90 overflow-hidden transition-all duration-500 ${isOpen ? "max-h-[500px]" : "max-h-0"}`}>
+                <ul className="list-disc list-inside space-y-1">
                   {roadmap.steps.map((step, i) => (
                     <li key={i}>{step}</li>
                   ))}
                 </ul>
-                <a
-                  href={roadmap.youtube}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 bg-white text-gray-800 rounded-lg font-semibold hover:bg-gray-200 transition"
-                >
-                  Watch on YouTube
-                </a>
+
+                {/* PDF Button */}
+                {isOpen && (
+                  <button
+                    onClick={() => generatePDF(roadmap)}
+                    className="mt-4 px-4 py-2 bg-white text-gray-800 font-bold rounded-lg hover:bg-gray-100 transition flex items-center gap-2"
+                  >
+                    <PlayCircleIcon size={18} /> Download PDF
+                  </button>
+                )}
               </div>
             </div>
-          ))}
-        </div>
-      </section>
+          );
+        })}
+      </main>
     </div>
   );
 }

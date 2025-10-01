@@ -264,7 +264,25 @@ const faqs = [
             ))}
           </div>
         </section>
-
+{/* --- START: Testimonials Slider (Publicity Section) --- */}
+<section className="py-20 bg-blue-50">
+    <h2 className="text-3xl font-bold text-center mb-12 text-blue-700">Hear From Our Satisfied Students 🎤</h2>
+    <div className="max-w-7xl mx-auto flex gap-6 overflow-x-auto px-4 md:px-8 pb-4 snap-x snap-mandatory">
+        {testimonials.map((t, idx) => (
+            <div 
+                key={idx} 
+                className="flex-shrink-0 w-80 p-6 bg-white rounded-2xl shadow-xl border-t-4 border-blue-400 hover:shadow-2xl transition duration-300 transform hover:translate-y-[-5px]"
+            >
+                <p className="italic text-gray-700 mb-4 text-lg">"{t.text}"</p>
+                <div className="mt-4 flex items-center gap-2">
+                    <span className="text-3xl">⭐</span>
+                    <p className="font-bold text-blue-600">— {t.name}</p>
+                </div>
+            </div>
+        ))}
+    </div>
+</section>
+{/* --- END: Testimonials Slider --- */}
    {/* 🌟 Futuristic Hackathons Section */}
 <section className="py-24 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden w-full">
   <h2 className="text-5xl font-extrabold text-center mb-16 drop-shadow-lg">🔥 Upcoming Hackathons</h2>
@@ -297,7 +315,92 @@ const faqs = [
     ))}
   </div>
 </section>
+{/* --- START: AI Tools Explorer Spotlight (6-Tool Layout) --- */}
+<section className="py-20 bg-indigo-50">
+    <div className="max-w-7xl mx-auto px-8">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-indigo-800">🚀 AI Tools & Platforms Explorer: The Essentials</h2>
+        <p className="text-center text-lg text-gray-600 mb-10 max-w-3xl mx-auto">
+            Master the most impactful **Generative AI** tools used across coding, content creation, and data science to accelerate your career.
+        </p>
 
+        {/* 3x2 Grid for 6 Tools */}
+        <div className="grid md:grid-cols-3 gap-8">
+            
+            {/* Tool Card 1: ChatGPT (Assistant) */}
+            <div className="bg-white p-6 rounded-xl shadow-2xl hover:shadow-indigo-300/50 transition-all duration-300 transform hover:translate-y-[-5px] border-b-4 border-purple-400">
+                <div className="text-4xl mb-4 text-purple-600">🧠</div>
+                <h3 className="text-xl font-bold mb-3 text-purple-800">ChatGPT (OpenAI)</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                    The general-purpose language model for **complex problem-solving**, brainstorming, concept explanations, and API documentation.
+                </p>
+                <a href="https://openai.com/chatgpt" target="_blank" className="mt-4 inline-block text-purple-600 font-semibold hover:underline text-sm">
+                    Access Platform →
+                </a>
+            </div>
+
+            {/* Tool Card 2: GitHub Copilot (Coding) */}
+            <div className="bg-white p-6 rounded-xl shadow-2xl hover:shadow-indigo-300/50 transition-all duration-300 transform hover:translate-y-[-5px] border-b-4 border-blue-400">
+                <div className="text-4xl mb-4 text-blue-600">💻</div>
+                <h3 className="text-xl font-bold mb-3 text-blue-800">GitHub Copilot / Code Assistants</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                    AI pair programmer that provides **real-time code suggestions**, auto-completes functions, and writes test cases directly in your IDE.
+                </p>
+                <a href="https://github.com/features/copilot" target="_blank" className="mt-4 inline-block text-blue-600 font-semibold hover:underline text-sm">
+                    Explore Coding AI →
+                </a>
+            </div>
+
+            {/* Tool Card 3: Midjourney / DALL-E (Generative Design) */}
+            <div className="bg-white p-6 rounded-xl shadow-2xl hover:shadow-indigo-300/50 transition-all duration-300 transform hover:translate-y-[-5px] border-b-4 border-red-400">
+                <div className="text-4xl mb-4 text-red-600">🖼️</div>
+                <h3 className="text-xl font-bold mb-3 text-red-800">Midjourney / DALL-E</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                    Leading **text-to-image generators** used for rapid prototyping, creating high-quality UI assets, and conceptual design mocks.
+                </p>
+                <a href="https://openai.com/dall-e-3" target="_blank" className="mt-4 inline-block text-red-600 font-semibold hover:underline text-sm">
+                    Start Image Generation →
+                </a>
+            </div>
+            
+            {/* Tool Card 4: Canva (Design) */}
+            <div className="bg-white p-6 rounded-xl shadow-2xl hover:shadow-indigo-300/50 transition-all duration-300 transform hover:translate-y-[-5px] border-b-4 border-pink-400">
+                <div className="text-4xl mb-4 text-pink-600">🎨</div>
+                <h3 className="text-xl font-bold mb-3 text-pink-800">Canva AI Design Suite</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                    Integrates AI tools for **easy visual content creation**, presentations, social media graphics, and quick background removal/editing.
+                </p>
+                <a href="https://www.canva.com/" target="_blank" className="mt-4 inline-block text-pink-600 font-semibold hover:underline text-sm">
+                    Start Designing →
+                </a>
+            </div>
+
+            {/* Tool Card 5: Gamma (Presentations) */}
+            <div className="bg-white p-6 rounded-xl shadow-2xl hover:shadow-indigo-300/50 transition-all duration-300 transform hover:translate-y-[-5px] border-b-4 border-green-400">
+                <div className="text-4xl mb-4 text-green-600">📝</div>
+                <h3 className="text-xl font-bold mb-3 text-green-800">Gamma / AI Presentations</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                    Tool that uses AI to convert **text prompts into polished slides, documents, and web pages**—perfect for reports and pitch decks.
+                </p>
+                <a href="https://gamma.app/" target="_blank" className="mt-4 inline-block text-green-600 font-semibold hover:underline text-sm">
+                    Generate Content →
+                </a>
+            </div>
+            
+            {/* Tool Card 6: Notion AI (Productivity/Notes) */}
+            <div className="bg-white p-6 rounded-xl shadow-2xl hover:shadow-indigo-300/50 transition-all duration-300 transform hover:translate-y-[-5px] border-b-4 border-yellow-400">
+                <div className="text-4xl mb-4 text-yellow-600">📋</div>
+                <h3 className="text-xl font-bold mb-3 text-yellow-800">Notion AI / Productivity</h3>
+                <p className="text-sm text-gray-600 mb-4">
+                    Embeds AI directly into **project management and note-taking** to summarize large documents, generate meeting agendas, and organize tasks.
+                </p>
+                <a href="https://www.notion.so/" target="_blank" className="mt-4 inline-block text-yellow-600 font-semibold hover:underline text-sm">
+                    Explore Workspaces →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{/* --- END: AI Tools Explorer Spotlight (UPDATED) --- */}
         {/* Trusted Colleges Section */}
         <section className="py-20 bg-gradient-to-r from-gray-50 via-gray-100 to-gray-50 relative overflow-hidden">
           <h3 className="text-center text-3xl font-extrabold text-gray-700 mb-12">Trusted by Top Colleges & Students 🚀</h3>
@@ -352,109 +455,59 @@ const faqs = [
     ))}
   </div>
 </section>
-{/* 🌟 Mallareddy University – Featured Section */}
-<section className="py-24 bg-gradient-to-r from-blue-50 via-white to-blue-50 relative overflow-hidden">
-  <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center gap-12">
-    
-    {/* University Logo */}
-    <div className="flex-shrink-0 relative">
-      <img
-        src="/logos/mru.png"
-        alt="Mallareddy University"
-        className="h-48 w-48 object-contain rounded-full shadow-2xl border-4 border-blue-500"
-      />
-      <span className="absolute top-0 -right-4 bg-yellow-400 text-blue-900 font-bold px-3 py-1 rounded-full shadow-lg text-sm animate-pulse">
-        Your University!
-      </span>
+{/* --- START: 5. Latest Opportunities / News --- */}
+<section className="py-20 bg-white">
+    <div className="max-w-7xl mx-auto px-8">
+        <h2 className="text-4xl font-extrabold text-center mb-12 text-gray-800">🎯 Latest Career Opportunities</h2>
+        
+        {/* Mock Internships Data (for the tabs) */}
+        {(() => {
+            const mockInternships = [
+                { title: "Software Development Intern", host: "TechCorp Global", deadline: "Jan 15, 2026", link: "/internships/techcorp", type: "Internship" },
+                { title: "Data Analyst Internship", host: "QuantLabs Inc.", deadline: "Feb 10, 2026", link: "/internships/quantlabs", type: "Internship" },
+                { title: "Cloud Engineering Trainee", host: "Azure Partners", deadline: "Dec 30, 2025", link: "/internships/azure", type: "Internship" },
+            ];
+
+            // Combine and sort content (mocking a dynamic feed)
+            const opportunityFeed = [
+                ...mockInternships.slice(0, 3).map(i => ({ ...i, date: `Deadline: ${i.deadline}` })),
+                ...hackathons.slice(0, 2).map(h => ({ ...h, type: "Hackathon", deadline: h.date }))
+            ].sort((a, b) => new Date(a.deadline) > new Date(b.deadline) ? 1 : -1);
+
+            return (
+                <div className="space-y-8">
+                    {/* Dynamic Feed Display */}
+                    <div className="grid md:grid-cols-3 gap-6">
+                        {opportunityFeed.map((op, idx) => (
+                            <a 
+                                key={idx} 
+                                href={op.link} 
+                                className="block p-5 bg-gray-50 rounded-xl shadow hover:shadow-lg transition transform hover:scale-[1.02] border-l-4"
+                                style={{ 
+                                    borderColor: op.type === 'Hackathon' ? '#ec4899' : '#3b82f6' // Pink for Hackathon, Blue for Internship
+                                }}
+                            >
+                                <p className="text-xs font-bold uppercase mb-1" style={{ color: op.type === 'Hackathon' ? '#db2777' : '#2563eb' }}>
+                                    {op.type}
+                                </p>
+                                <h4 className="text-xl font-bold text-gray-900 mb-2">{op.title}</h4>
+                                <p className="text-sm text-gray-600 mb-2">Host: {op.host}</p>
+                                <p className="text-xs text-red-500 font-semibold">
+                                    {op.type === 'Hackathon' ? `Starts: ${op.date}` : `Apply By: ${op.deadline}`}
+                                </p>
+                            </a>
+                        ))}
+                    </div>
+
+                    <div className="text-center pt-4">
+                        <a href="/opportunities" className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 transition inline-block">
+                            View All {opportunityFeed.length}+ Openings →
+                        </a>
+                    </div>
+                </div>
+            );
+        })()}
     </div>
-
-    {/* Recognition & Features */}
-    <div className="text-center md:text-left flex-1">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-blue-700 mb-4">
-        🎓 Mallareddy University – Campus of Excellence
-      </h2>
-      <p className="text-gray-700 text-lg mb-6 max-w-xl">
-        MRU is a hub of innovation and talent in Hyderabad. Active tech societies, hackathons, and collaborations empower students to shape their future.
-      </p>
-
-      {/* Stats */}
-      <div className="flex justify-center md:justify-start gap-6 mb-6 flex-wrap">
-        <div className="bg-white px-6 py-4 rounded-xl shadow hover:shadow-lg transition">
-          <h3 className="text-2xl font-bold text-blue-600">12k+</h3>
-          <p className="text-gray-600 text-sm">Students</p>
-        </div>
-        <div className="bg-white px-6 py-4 rounded-xl shadow hover:shadow-lg transition">
-          <h3 className="text-2xl font-bold text-blue-600">8</h3>
-          <p className="text-gray-600 text-sm">Active Clubs</p>
-        </div>
-        <div className="bg-white px-6 py-4 rounded-xl shadow hover:shadow-lg transition">
-          <h3 className="text-2xl font-bold text-blue-600">20+</h3>
-          <p className="text-gray-600 text-sm">Hackathons Hosted</p>
-        </div>
-      </div>
-
-      {/* Active Clubs */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-        {[
-          { name: "MLSC", logo: "/logos/mlsc.png" },
-          { name: "GDG", logo: "/logos/gdg.png" },
-          { name: "Alan Turing Club", logo: "/logos/alan.png" },
-        ].map((club, i) => (
-          <div key={i} className="bg-white p-4 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-            <img src={club.logo} alt={club.name} className="h-16 w-16 mb-2 object-contain" />
-            <h4 className="font-semibold text-blue-600">{club.name}</h4>
-          </div>
-        ))}
-      </div>
-
-      {/* Call to Action */}
-      <div className="flex flex-col sm:flex-row gap-4">
-        <a
-          href="https://www.mrucolleges.edu.in/"
-          target="_blank"
-          className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow hover:bg-blue-700 transition transform hover:scale-105"
-        >
-          Visit MRU Official Site
-        </a>
-        <a
-          href="/clubs?college=mru"
-          className="px-6 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-xl shadow hover:bg-yellow-500 transition transform hover:scale-105"
-        >
-          Explore MRU Clubs
-        </a>
-      </div>
-    </div>
-  </div>
-
-  {/* Hall of Fame / Achievements Carousel */}
-  <div className="mt-16 max-w-7xl mx-auto px-8">
-    <h3 className="text-3xl font-bold text-blue-700 mb-6 text-center">🏆 MRU Hall of Fame</h3>
-    <div className="overflow-x-auto flex gap-6 scrollbar-hide animate-marquee">
-      {[
-        { title: "AIGNITE AI Winner", year: "2025", img: "/logos/hackathon1.png" },
-        { title: "Best Project Award", year: "2024", img: "/logos/hackathon2.png" },
-        { title: "Google Cloud Challenge Top 3", year: "2023", img: "/logos/hackathon3.png" },
-        { title: "Robotics League Champions", year: "2023", img: "/logos/hackathon4.png" },
-      ].map((item, idx) => (
-        <div key={idx} className="flex-shrink-0 w-60 bg-white rounded-2xl shadow-lg p-4 hover:scale-105 transition flex flex-col items-center">
-          <img src={item.img} alt={item.title} className="h-24 w-24 object-contain mb-2" />
-          <h4 className="font-semibold text-blue-600 text-center">{item.title}</h4>
-          <p className="text-gray-600 text-sm">{item.year}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  {/* Decorative Background */}
-  <div className="absolute inset-0 -z-10 opacity-20">
-    <svg className="w-full h-full" viewBox="0 0 1440 320">
-      <path
-        fill="#3b82f6"
-        fillOpacity="0.05"
-        d="M0,160L80,144C160,128,320,96,480,85.3C640,75,800,85,960,106.7C1120,128,1280,160,1360,176L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-      ></path>
-    </svg>
-  </div>
 </section>
 
 {/* 🌟 Newsletter / Subscribe Section */}
@@ -501,7 +554,67 @@ const faqs = [
     ))}
   </div>
 </section>
+{/* --- 4️⃣ Community Preview (Forum Teaser) - PRO REVAMPED --- */}
+<section className="py-20 bg-gray-50">
+    <div className="max-w-7xl mx-auto px-8">
+        <h2 className="text-4xl font-extrabold text-center mb-12 text-blue-700">⚡ Developer Flow: Peer Discussions & Support</h2>
+        <div className="grid md:grid-cols-2 gap-10">
+            
+            {/* Left Card: Trending Discussions (Dynamic Styling) */}
+            <div className="p-8 bg-white rounded-2xl shadow-2xl border-t-8 border-indigo-600">
+                <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center gap-2">
+                    <span className="text-3xl text-indigo-500">🔥</span> Trending Technical Threads
+                </h3>
+                <ul className="space-y-3">
+                    {/* Discussion Item 1: High-value topic */}
+                    <li className="p-4 bg-gray-100 rounded-xl transition hover:bg-gray-200 cursor-pointer border border-gray-200">
+                        <p className="text-base font-semibold text-gray-800">
+                            The Future of Web Dev: **Signal-based State Management** in Angular vs React?
+                        </p>
+                        <span className="text-xs text-indigo-500 font-medium">Topic: #FrontendArchitecture | Replies: 124</span>
+                    </li>
+                    {/* Discussion Item 2: AI/ML topic */}
+                    <li className="p-4 bg-gray-100 rounded-xl transition hover:bg-gray-200 cursor-pointer border border-gray-200">
+                        <p className="text-base font-semibold text-gray-800">
+                            **Hyperparameter Optimization** for Transformers: Best Practices in PyTorch.
+                        </p>
+                        <span className="text-xs text-indigo-500 font-medium">Topic: #DeepLearning | Replies: 89</span>
+                    </li>
+                    {/* Discussion Item 3: Backend/Database topic */}
+                    <li className="p-4 bg-gray-100 rounded-xl transition hover:bg-gray-200 cursor-pointer border border-gray-200">
+                        <p className="text-base font-semibold text-gray-800">
+                            Choosing between **Go Channels and Java Concurrency** for high-throughput APIs.
+                        </p>
+                        <span className="text-xs text-indigo-500 font-medium">Topic: #BackendOps | Replies: 45</span>
+                    </li>
+                </ul>
+                <a href="/forum" className="mt-8 inline-block px-8 py-3 bg-indigo-600 text-white font-semibold rounded-xl shadow-lg hover:bg-indigo-700 transition">
+                    Explore Developer Forum →
+                </a>
+            </div>
 
+            {/* Right Card: Automated Support / Resource CTA (Visual update) */}
+            <div className="p-8 bg-white rounded-2xl shadow-2xl border-b-8 border-green-500 flex flex-col justify-between">
+                <div>
+                    <h3 className="text-3xl font-bold mb-4 text-green-700 flex items-center gap-2">
+                        <span className="text-4xl">💡</span> Instant Resource Library
+                    </h3>
+                    <p className="text-gray-600 mb-6 text-lg">
+                        Access our curated, verified **Cheat Sheets** and use our integrated AI tools for quick answers and debugging help.
+                    </p>
+                    <ul className="list-disc list-inside text-base text-gray-700 space-y-2 ml-4">
+                        <li>AI Debugging Assistance (24/7)</li>
+                        <li>Verified Cheat Sheets (SQL, Python, C++)</li>
+                        <li>Self-Service Documentation</li>
+                    </ul>
+                </div>
+                <a href="/cheatsheets" className="mt-8 px-8 py-3 bg-green-600 text-white font-semibold rounded-xl shadow-lg hover:bg-green-700 transition">
+                    Access Resource Library
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
