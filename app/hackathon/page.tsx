@@ -152,16 +152,35 @@ export default function HackathonsPage() {
     <div style={{ minHeight: '100vh', background: BG_COLOR, fontFamily: 'sans-serif', paddingTop: '80px' }}>
       
       {/* --- NAVBAR --- */}
-      <nav style={{ position: 'fixed', width: '100%', zIndex: 50, top: 0, left: 0, backgroundColor: PRIMARY_COLOR, color: 'white', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', padding: '16px 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: 700, margin: 0 }}>VerteX</h1>
-          <div style={{ display: 'flex', gap: '1.5rem' }}>
-              {["Home", "Roadmaps", "Internships", "ResumeBuilder", "Projects", "Certifications", "Cheat Sheets"].map((item) => (
-                  <Link key={item} href={`/${item.toLowerCase().replace(/\s/g, "")}`} style={{ color: 'white', textDecoration: 'none', fontWeight: 500, transition: 'color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#bfdbfe'} onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>
-                      {item}
-                  </Link>
-              ))}
-          </div>
-      </nav>
+  <nav style={{ position: 'fixed', width: '100%', zIndex: 50, top: 0, left: 0, backgroundColor: PRIMARY_COLOR, color: 'white', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', padding: '16px 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <h1 style={{ fontSize: '1.5rem', fontWeight: 700, margin: 0 }}>VerteX</h1>
+    <div style={{ display: 'flex', gap: '1.5rem' }}>
+        {[
+            "Home", 
+            "Roadmaps", 
+            "AI Tools", // Added
+            "Internships", 
+            "Resume Builder", // Display name corrected
+            "Interview Prep", // Added
+            "Projects", 
+            "Hackathons", // Added
+            "Certifications", 
+            "Cheat Sheets"
+        ].map((item) => (
+            <Link 
+                key={item} 
+                // This line creates the href based on the item name:
+                // e.g., "AI Tools" -> "/aitools"
+                href={`/${item.toLowerCase().replace(/\s/g, "")}`} 
+                style={{ color: 'white', textDecoration: 'none', fontWeight: 500, transition: 'color 0.3s' }} 
+                onMouseEnter={(e) => e.currentTarget.style.color = '#bfdbfe'} 
+                onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+            >
+                {item}
+            </Link>
+        ))}
+    </div>
+</nav>
 
       <main style={{ padding: '40px 1.5rem' }}>
         <header style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 40px' }}>

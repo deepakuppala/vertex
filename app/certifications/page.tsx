@@ -28,7 +28,11 @@ const allCourses = [
   { name: "Machine Learning by Stanford", platform: "Coursera", duration: 60, category: "AI/ML", type: "Free", link: "https://www.coursera.org/learn/machine-learning" },
   { name: "Data Science MicroMasters", platform: "edX", duration: 100, category: "Data", type: "Free", link: "https://www.edx.org/micromasters/mitx-data-science" },
 ];
-
+const PRIME_COLOR = "#007AFF"; // Modern, deep blue (Equivalent to blue-600/700)
+const ACCENT_COLOR = "#10b981"; // Vibrant Green (Equivalent to emerald-500/600)
+const BG_COLOR_LIGHT = "#f9fafb"; // Equivalent to gray-50
+const CARD_BG = "#ffffff"; // White
+const TEXT_COLOR_DARK = "#1f2937"; // Equivalent to gray-800
 export default function CertificationsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -49,20 +53,65 @@ export default function CertificationsPage() {
       {/* Navbar */}
       <nav className="flex justify-between items-center px-8 py-4 bg-blue-600 text-white shadow-md">
         <h1 className="text-2xl font-bold">VerteX</h1>
-         <div className="hidden md:flex space-x-8">
-            <Link href="/" className="hover:underline">Home</Link>
-            <Link href="/roadmaps" className="hover:underline">Roadmaps</Link>
-            <Link href="/internships" className="hover:underline">Internships</Link>
-             <Link href="/resume" className="hover:underline">ResumeBuilder</Link>
-             <Link href="/interview" className="hover:underline">Interviewprep</Link>
-             <Link href="/projects" className="hover:underline">Projects</Link>
-            <Link href="/hackathon" className="hover:underline">Hackathons</Link>
-            <Link href="/certifications" className="hover:underline">Certifications</Link>
-            <Link href="/cheatsheets" className="hover:underline">Cheat Sheets</Link>
-          </div>
+        <div className="hidden md:flex space-x-8">
+          <Link href="/" className="hover:underline">Home</Link>
+          <Link href="/roadmaps" className="hover:underline">Roadmaps</Link>
+          <Link href="/internships" className="hover:underline">Internships</Link>
+          <Link href="/resume" className="hover:underline">ResumeBuilder</Link>
+          <Link href="/interview" className="hover:underline">Interviewprep</Link>
+          <Link href="/projects" className="hover:underline">Projects</Link>
+          <Link href="/hackathon" className="hover:underline">Hackathons</Link>
+          <Link href="/certifications" className="hover:underline">Certifications</Link>
+          <Link href="/cheatsheets" className="hover:underline">Cheat Sheets</Link>
+        </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-8 py-12">
+      {/* Hero Section */}
+    <header className="text-center mb-16 pt-10">
+  {/* Small Badge */}
+  <div
+    className="inline-block px-4 py-1 text-sm font-medium rounded-full mb-3"
+    style={{ color: PRIME_COLOR, backgroundColor: "rgba(0, 122, 255, 0.1)" }}
+  >
+    Skill Validation
+  </div>
+
+  {/* Big Heading */}
+  <h1
+    className="text-5xl lg:text-6xl font-extrabold tracking-tight"
+    style={{ color: TEXT_COLOR_DARK }}
+  >
+    Showcase Your <span style={{ color: PRIME_COLOR }}>Certifications</span>
+  </h1>
+
+  {/* Subtitle */}
+  <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto">
+    Highlight your achievements and earned certifications from top platforms.
+    Build credibility and stand out in your career with verified skills and
+    professional growth opportunities.
+  </p>
+
+  {/* Call-to-Action */}
+  <div className="mt-8 flex justify-center gap-4">
+    <a
+      href="#my-certifications"
+      className="px-6 py-3 rounded-lg font-semibold text-white shadow"
+      style={{ backgroundColor: PRIME_COLOR }}
+    >
+      View My Certifications
+    </a>
+    <a
+      href="#add-certification"
+      className="px-6 py-3 rounded-lg font-semibold border shadow"
+      style={{ borderColor: PRIME_COLOR, color: PRIME_COLOR }}
+    >
+      Add New
+    </a>
+  </div>
+</header>
+
+
+      <main id="courses" className="max-w-7xl mx-auto px-8 py-12">
         <h1 className="text-4xl font-bold text-center mb-10 text-gray-800">📜 Certifications</h1>
 
         {/* Filters */}

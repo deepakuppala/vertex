@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-
 const cheatSheets = [
   // Java
   { name: "Java Programming Cheatsheet", category: "Java", link: "https://introcs.cs.princeton.edu/java/11cheatsheet/" },
@@ -50,11 +49,16 @@ const cheatSheets = [
   { name: "TensorFlow Guide", category: "AI/ML", link: "https://www.beoptimized.be/pdf/TensorFlow2Cheatsheet.pdf" },
 ];
 
+const PRIME_COLOR = "#007AFF"; 
+const TEXT_COLOR_DARK = "#1f2937";
+
 export default function CheatSheetsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ["All", "Java", "Python", "HTML", "CSS", "JavaScript", "React", "NodeJS", "SQL", "DSA", "DevOps", "AI/ML"];
+  const categories = [
+    "All", "Java", "Python", "HTML", "CSS", "JavaScript", "React", "NodeJS", "SQL", "DSA", "DevOps", "AI/ML"
+  ];
 
   const filteredSheets = cheatSheets.filter(sheet => {
     const matchesSearch = sheet.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -67,22 +71,53 @@ export default function CheatSheetsPage() {
       {/* Navbar */}
       <nav className="flex justify-between items-center px-8 py-4 bg-blue-600 text-white shadow-md">
         <h1 className="text-2xl font-bold">VerteX</h1>
-       <div className="hidden md:flex space-x-8">
-            <Link href="/" className="hover:underline">Home</Link>
-            <Link href="/roadmaps" className="hover:underline">Roadmaps</Link>
-            <Link href="/internships" className="hover:underline">Internships</Link>
-             <Link href="/resume" className="hover:underline">ResumeBuilder</Link>
-             <Link href="/interview" className="hover:underline">Interviewprep</Link>
-             <Link href="/projects" className="hover:underline">Projects</Link>
-            <Link href="/hackathon" className="hover:underline">Hackathons</Link>
-            <Link href="/certifications" className="hover:underline">Certifications</Link>
-            <Link href="/cheatsheets" className="hover:underline">Cheat Sheets</Link>
-          </div>
+        <div className="hidden md:flex space-x-8">
+          <Link href="/" className="hover:underline">Home</Link>
+          <Link href="/roadmaps" className="hover:underline">Roadmaps</Link>
+          <Link href="/internships" className="hover:underline">Internships</Link>
+          <Link href="/resume" className="hover:underline">ResumeBuilder</Link>
+          <Link href="/interview" className="hover:underline">Interviewprep</Link>
+          <Link href="/projects" className="hover:underline">Projects</Link>
+          <Link href="/hackathon" className="hover:underline">Hackathons</Link>
+          <Link href="/certifications" className="hover:underline">Certifications</Link>
+          <Link href="/cheatsheets" className="hover:underline">Cheat Sheets</Link>
+        </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-8 py-12">
-        <h1 className="text-4xl font-bold text-center mb-10 text-gray-800">📚 Cheat Sheets & PDFs</h1>
+      {/* Header */}
+      <header className="text-center mb-16 pt-10">
+        <div
+          className="inline-block px-4 py-1 text-sm font-medium rounded-full mb-3"
+          style={{ color: PRIME_COLOR, backgroundColor: "rgba(0, 122, 255, 0.1)" }}
+        >
+          Quick References
+        </div>
+        <h1 className="text-5xl lg:text-6xl font-extrabold tracking-tight" style={{ color: TEXT_COLOR_DARK }}>
+          Master Concepts with <span style={{ color: PRIME_COLOR }}>Cheat Sheets</span>
+        </h1>
+        <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto">
+          Access concise guides, formulas, and tips to accelerate your learning and improve productivity. Perfect for coding, exam prep, and professional growth.
+        </p>
+        <div className="mt-8 flex justify-center gap-4">
+          <a
+            href="#all-cheatsheets"
+            className="px-6 py-3 rounded-lg font-semibold text-white shadow"
+            style={{ backgroundColor: PRIME_COLOR }}
+          >
+            Explore Cheat Sheets
+          </a>
+          <a
+            href="#create-cheatsheet"
+            className="px-6 py-3 rounded-lg font-semibold border shadow"
+            style={{ borderColor: PRIME_COLOR, color: PRIME_COLOR }}
+          >
+            Create Your Own
+          </a>
+        </div>
+      </header>
 
+      {/* Main Content */}
+      <main className="px-8">
         {/* Search & Filter */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-8 gap-4">
           <input
@@ -104,7 +139,7 @@ export default function CheatSheetsPage() {
         </div>
 
         {/* Cheat Sheets Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {filteredSheets.map((sheet, index) => (
             <div key={index} className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition-shadow border border-gray-200">
               <h3 className="text-xl font-bold text-blue-700">{sheet.name}</h3>

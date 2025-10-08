@@ -14,21 +14,21 @@ const DANGER_COLOR = "#ef4444";  // Red (Error)
 const WARNING_COLOR = "#f59e0b"; // Amber (Warning)
 const BG_COLOR_LIGHT = "#f9fafb";
 const TEXT_COLOR_DARK = "#1f2937";
-const TEXT_COLOR_MUTED = "#6b7280"; // FIX: Added missing constant
+const TEXT_COLOR_MUTED = "#6b7280";
 const INPUT_BORDER = "#d1d5db";
 const CARD_SHADOW = "0 4px 12px rgba(0, 0, 0, 0.08)";
 const CARD_RADIUS = "12px";
 const BUTTON_SHADOW = "0 2px 5px rgba(0,0,0,0.2)";
 const BORDER_COLOR = "#e5e7eb";
-const CARD_BG = "#ffffff"; // FIX: Added missing constant
-const SECONDARY_COLOR = ACCENT_COLOR; // FIX: Defined as ACCENT_COLOR fallback
+const CARD_BG = "#ffffff";
+const SECONDARY_COLOR = ACCENT_COLOR;
 // ---------------------------------
 
 // Renamed templates to emphasize ATS compliance (Feature)
 const TEMPLATE_OPTIONS = [
-    { value: "ats_minimal", name: "1. Minimalist (ATS V.1)" },
-    { value: "ats_twocolumn", name: "2. Modern (Simulated Two-Column)" },
-    { value: "ats_colorblock", name: "3. Professional (Color Header)" },
+    { value: "ats_minimal", name: "1. Minimalist (Highest ATS Compliance)" },
+    { value: "ats_twocolumn", name: "2. Structured (Simulated Two-Column)" },
+    { value: "ats_colorblock", name: "3. Header-Focused (Visual Impact)" },
 ];
 
 // --- Type Definitions ---
@@ -372,6 +372,7 @@ export default function ResumeBuilderPage() {
         }
         
         if (template === "ats_twocolumn") {
+            // Note: This visual layout simulates two columns for the human reader
             return (
                 <div ref={resumeRef} style={getTemplateStyles(template)}>
                     <div style={{ padding: '0 30px' }}>
@@ -384,7 +385,7 @@ export default function ResumeBuilderPage() {
                         
                         {/* Two Column Simulation */}
                         <div style={{ display: 'flex', gap: '20px' }}>
-                            {/* LEFT COLUMN: Skills, Education, Awards (Simulated for flow) */}
+                            {/* LEFT COLUMN: Skills, Education, Awards */}
                             <div style={{ width: '35%', flexShrink: 0 }}>
                                 <div style={getPreviewSectionStyle(SECONDARY_COLOR, 'dashed')}>Technical Skills</div>
                                 <p style={{ margin: '5px 0 10px 0', fontSize: '10pt', color: TEXT_COLOR_DARK }}>{data.skills || "List your skills here..."}</p>
@@ -426,7 +427,7 @@ export default function ResumeBuilderPage() {
                                     </div>
                                 ))}
                                 <p style={{ margin: '10px 0 0 0', fontSize: '10pt', color: TEXT_COLOR_DARK }}>
-                                    **Certs:** {data.certifications.map(c => `${c.name} (${c.year})`).join(' | ')}
+                                    <strong>Certs:</strong> {data.certifications.map(c => `${c.name} (${c.year})`).join(' | ')}
                                 </p>
                             </div>
                         </div>
@@ -454,25 +455,40 @@ export default function ResumeBuilderPage() {
     return (
         <div style={{ minHeight: "100vh", background: BG_COLOR_LIGHT }}>
             {/* Navbar (Premium Look) */}
-           <nav className="flex justify-between items-center px-8 py-4 bg-blue-600 text-white shadow-md">
-                   <h1 className="text-2xl font-bold">VerteX</h1>
-               <div className="hidden md:flex space-x-8">
-            <Link href="/" className="hover:underline">Home</Link>
-            <Link href="/roadmaps" className="hover:underline">Roadmaps</Link>
-            <Link href="/internships" className="hover:underline">Internships</Link>
-             <Link href="/resume" className="hover:underline">ResumeBuilder</Link>
-             <Link href="/interview" className="hover:underline">Interviewprep</Link>
-             <Link href="/projects" className="hover:underline">Projects</Link>
-            <Link href="/hackathon" className="hover:underline">Hackathons</Link>
-            <Link href="/certifications" className="hover:underline">Certifications</Link>
-            <Link href="/cheatsheets" className="hover:underline">Cheat Sheets</Link>
-          </div>
-                 </nav>
-
+           <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 32px", background: PRIME_COLOR, color: "#fff" }}>
+    <h1 style={{ fontSize: "24px", fontWeight: "bold", letterSpacing: '1px' }}>VerteX </h1>
+    <div style={{ display: "flex", gap: "20px" }}>
+        {/* Added Home link */}
+        <Link href="/" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>Home</Link>
+        
+        {/* Existing Links */}
+        <Link href="/roadmaps" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>Roadmaps</Link>
+        <Link href="/ai" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>AI Tools</Link> 
+        <Link href="/internships" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>Internships</Link>
+        <Link href="/resume" style={{ color: 'white', textDecoration: 'none', fontWeight: 700, borderBottom: '2px solid white' }}>Resume Builder</Link>
+        <Link href="/interview" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>Interview Prep</Link>
+        <Link href="/projects" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>Projects</Link>
+        <Link href="/hackathon" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>Hackathons</Link>
+        <Link href="/certifications" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>Certifications</Link>
+        <Link href="/cheatsheets" style={{ color: 'white', textDecoration: 'none', fontWeight: 500 }}>Cheat Sheets</Link>
+    </div>
+</nav>
             <main style={{ maxWidth: "1400px", margin: "0 auto", padding: "40px 20px" }}>
-                <h1 style={{ fontSize: "36px", fontWeight: 800, textAlign: "center", marginBottom: "30px", color: TEXT_COLOR_DARK }}>
-                    Master Your First Impression: <span style={{ color: PRIME_COLOR }}>ATS-Optimized Resume Creator</span>
-                </h1>
+               {/* --- Hero Section for Resume Builder --- */}
+<header className="text-center mb-16 pt-5"> {/* Added pt-20 for spacing below a fixed navbar */}
+    <div 
+        className="inline-block px-4 py-1 text-sm font-medium rounded-full mb-3"
+        style={{ color: PRIME_COLOR, backgroundColor: 'rgba(0, 122, 255, 0.1)' }}
+    >
+        Land Your Dream Job 🚀
+    </div>
+    <h1 className="text-5xl lg:text-6xl font-extrabold tracking-tight" style={{ color: TEXT_COLOR_DARK }}>
+        Build an **ATS-Ready** <span style={{ color: PRIME_COLOR }}>Resume</span> in Minutes
+    </h1>
+    <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto">
+        Stop guessing and start winning. Use our **AI-powered Resume Builder** to create professional, job-winning resumes that pass automated screening and impress hiring managers.
+    </p>
+</header>
                 
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "30px" }}>
                     

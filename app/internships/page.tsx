@@ -67,6 +67,11 @@ const internships = [
     { company: "Swiggy", role: "Frontend Developer Intern", category: "Frontend", location: "Bengaluru", stipend: "₹45,000/month", duration: "6 Months", link: "#", type: "Onsite", size: "MNC", requiredSkills: ["React", "TypeScript"], verified: true, durationType: "Long-term", collegePartner: true, status: "Hot" },
     { company: "Dream11", role: "Backend Engineer Intern (Java)", category: "Backend", location: "Mumbai", stipend: "₹55,000/month", duration: "3 Months", link: "#", type: "Hybrid", size: "Mid-Size", requiredSkills: ["Java", "Spring Boot"], verified: false, durationType: "Short-term", collegePartner: false, status: "Open" },
 ];
+const PRIME_COLOR = "#007AFF"; // Modern, deep blue (Equivalent to blue-600/700)
+const ACCENT_COLOR = "#10b981"; // Vibrant Green (Equivalent to emerald-500/600)
+const BG_COLOR_LIGHT = "#f9fafb"; // Equivalent to gray-50
+const CARD_BG = "#ffffff"; // White
+const TEXT_COLOR_DARK = "#1f2937"; // Equivalent to gray-800
 
 export default function InternshipsPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -98,29 +103,49 @@ export default function InternshipsPage() {
           <Link href="/cheatsheets">Cheat Sheets</Link>
         </div>
       </nav>
+<header className="text-center mb-16 pt-10">
+  {/* Small Badge */}
+  <div
+    className="inline-block px-4 py-1 text-sm font-medium rounded-full mb-3"
+    style={{ color: PRIME_COLOR, backgroundColor: "rgba(0, 122, 255, 0.1)" }}
+  >
+    Career Opportunities
+  </div>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-20 px-6 text-center relative overflow-hidden">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Discover Top Internships in India</h1>
-        <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8">
-          Explore hundreds of internships across leading companies like Google, Microsoft, Amazon, and more. Find your perfect role, gain real-world experience, and jumpstart your career.
-        </p>
+  {/* Big Heading */}
+  <h1
+    className="text-5xl lg:text-6xl font-extrabold tracking-tight"
+    style={{ color: TEXT_COLOR_DARK }}
+  >
+    Explore Top <span style={{ color: PRIME_COLOR }}>Internships</span>
+  </h1>
 
-        {/* Search Bar */}
-        <div className="max-w-md mx-auto">
-          <input
-            type="text"
-            placeholder="Search internships by company or role..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full p-3 rounded-lg text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
-          />
-        </div>
+  {/* Subtitle */}
+  <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto">
+    Discover the best internship opportunities in <strong>tech, AI/ML,
+    software development, and more</strong>. Gain hands-on experience and build
+    your future career with <strong>Vertex</strong>.
+  </p>
 
-        {/* Decorative Circles */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white opacity-10 rounded-full -translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white opacity-10 rounded-full translate-x-1/3 translate-y-1/3"></div>
-      </section>
+  {/* Call-to-Action (optional) */}
+  <div className="mt-8 flex justify-center gap-4">
+    <a
+      href="#openings"
+      className="px-6 py-3 rounded-lg font-semibold text-white shadow"
+      style={{ backgroundColor: PRIME_COLOR }}
+    >
+      View Openings
+    </a>
+    <a
+      href="#apply"
+      className="px-6 py-3 rounded-lg font-semibold border shadow"
+      style={{ borderColor: PRIME_COLOR, color: PRIME_COLOR }}
+    >
+      Apply Now
+    </a>
+  </div>
+</header>
+
 
       {/* Internship List */}
       <section className="px-8 py-12 max-w-7xl mx-auto">
