@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<!-- AIGNITE Banner (centered) -->
+<div align="center">
+  <h1> Vertex AI – An AI Powered bridge from learning to opportunity. </h1>
+  <p><strong>Powered by MLSC | AIGNITE 2K25</strong></p>
+</div>
 
-## Getting Started
+---
 
-First, run the development server:
+<p align="center">
+  <strong>🚀 Vertex AI</strong><br/>
+  <em>An all-in-one AI-powered platform helping students learn, practice, and grow from zero to career-ready heroes.</em>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📖 Project Description
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+✨ **Problem Statement:**  
+Students struggle to connect classroom learning with real-world skills, certifications, and job opportunities. Current platforms are fragmented and fail to provide a single ecosystem for learning, internships, and professional growth.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+💡 **Proposed Solution:**  
+**Vertex AI** bridges the gap by providing an AI-driven student career acceleration ecosystem — offering curated learning paths, resume tools, certifications, projects, hackathons, and internships — all within one integrated platform.
 
-## Learn More
+🎯 **Target Users / Use Cases:**  
+- College students seeking structured learning and internships.  
+- Universities aiming to boost placement readiness.  
+- Recruiters looking for verified, skill-tested candidates.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔬 Methodology
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Research & Ideation** – Identified key pain points of student career development.  
+2. **Design** – Created an intuitive UI/UX for seamless navigation.  
+3. **Develop** – Built modules integrating Vertex AI for automation and recommendations.  
+4. **Test** – Collected student feedback on usability and AI accuracy.  
+5. **Deploy** – Hosted web app demo using Firebase and Vertex AI endpoints.  
+6. **Future Scope** – Personalized mentorship, AI-generated roadmaps, and campus integrations.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧠 Core Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Roadmaps & Learning Paths**  
+   - Curated roadmaps for AI/ML, Web Dev, Cybersecurity, etc.  
+   - Step-by-step learning from beginner to advanced.  
+
+2. **Cheat Sheets & Quick Guides**  
+   - Concise, exam-ready notes for fast revision and interview prep.
+
+3. **Certifications**  
+   - AI-powered certificate generation and LinkedIn integration.
+
+4. **Resume Builder (Career Craft)**  
+   - Vertex AI generates descriptions for skills, projects, and achievements.  
+   - One-click export to portfolio.
+
+5. **Internships & Jobs**  
+   - Smart AI-matched internships based on skill profile and domain.  
+
+6. **Interview Preparation**  
+   - AI-powered mock interviews and coding challenges.
+
+7. **Hackathons & Competitions**  
+   - Aggregates ongoing hackathons across campuses.  
+
+8. **Projects & Portfolio Builder**  
+   - Builds live portfolio websites automatically from user resumes.  
+
+9. **Cheat Codes for Career Growth**  
+   - Productivity tips, AI assistants for academics, and LinkedIn optimization.  
+
+---
+
+## 👥 Team Details
+**Team Name:** `Vertex AI`
+
+| Name | Role | Email |
+|---|---:|---|
+| U. Deepak | Team Lead | rishi@example.com |
+| S. Ranjith | Backend Developer | siddamranjith52447@gmail.com |
+| V.S. Rishi Charan | Frontend Developer | rishicharanvanam250@gmail.com |
+| S. Pranay | ML Engineer | s.pranayy07@gmail.com |
+
+---
+
+## 🛠️ Technology Stack
+`React.js` | `Node.js` | `Firebase` | `Python` | `Vertex AI` | `TensorFlow`
+
+---
+
+## 📹 Demonstration Video
+▶️ [https://drive.google.com/file/d/1UNAr4hvGqAGdIzfq6wOyfCSMB3A5Rg7-/view?usp=sharing](#)
+
+---
+
+## 🌐 Deployment
+🔗 [https://vertex-app-chi.vercel.app/](#)
+
+---
+
+## 📚 References
+- Google Vertex AI Docs  
+- Firebase ML Integration  
+- OpenAI API Documentation  
+- TensorFlow Tutorials  
+
+---
+
+## 🖼️ Assets / Screenshots
+<p align="center">
+  <img src="assets/vertex_logo.png" alt="Vertex AI Logo" width="220" /><br/>
+  <img src="assets/screenshot1.png" alt="Application Screenshot" width="600" />
+</p>
+
+---
+
+<p align="center">
+  <b>Hackathon:</b> AIGNITE 2K25 | Organized by MLSC<br/>
+</p>
