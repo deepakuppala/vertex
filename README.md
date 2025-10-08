@@ -77,7 +77,7 @@ Students struggle to connect classroom learning with real-world skills, certific
 
 | Name | Role | Email |
 |---|---:|---|
-| U. Deepak | Team Lead | rishi@example.com |
+| U. Deepak | Team Lead | deepakuppala8@gmail.com.com |
 | S. Ranjith | Backend Developer | siddamranjith52447@gmail.com |
 | V.S. Rishi Charan | Frontend Developer | rishicharanvanam250@gmail.com |
 | S. Pranay | ML Engineer | s.pranayy07@gmail.com |
