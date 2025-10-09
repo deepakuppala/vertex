@@ -1,6 +1,6 @@
 <!-- AIGNITE Banner (centered) -->
 <div align="center">
-  <h1> Vertex  – An bridge from learning to opportunity. </h1>
+  <h1> Vertex  – The bridge from learning to opportunity. </h1>
   <p><strong>Powered by MLSC | AIGNITE 2K25</strong></p>
 </div>
 
@@ -20,7 +20,7 @@
 Students struggle to connect classroom learning with real-world skills, certifications, and job opportunities. Current platforms are fragmented and fail to provide a single ecosystem for learning, internships, and professional growth.
 
 💡 **Proposed Solution:**  
-**Vertex AI** bridges the gap by providing an AI-driven student career acceleration ecosystem — offering curated learning paths, resume tools, certifications, projects, hackathons, and internships — all within one integrated platform.
+**Vertex** bridges the gap by providing a student career acceleration ecosystem — offering curated learning paths, resume tools, certifications, projects, hackathons, and internships — all within one integrated platform.
 
 🎯 **Target Users / Use Cases:**  
 - College students seeking structured learning and internships.  
@@ -53,11 +53,11 @@ Students struggle to connect classroom learning with real-world skills, certific
    - AI-powered certificate generation and LinkedIn integration.
 
 4. **Resume Builder (Career Craft)**  
-   - Vertex AI generates descriptions for skills, projects, and achievements.  
+   - Vertex generates descriptions for skills, projects, and achievements.  
    - One-click export to portfolio.
 
 5. **Internships & Jobs**  
-   - Smart AI-matched internships based on skill profile and domain.  
+   - Smart internships based on skill profile and domain.  
 
 6. **Interview Preparation**  
    - AI-powered mock interviews and coding challenges.
@@ -74,7 +74,7 @@ Students struggle to connect classroom learning with real-world skills, certific
 ---
 
 ## 👥 Team Details
-**Team Name:** `Vertex AI`
+**Team Name:** `CodeSprinters`
 
 | Name | Role | Email |
 |---|---:|---|
