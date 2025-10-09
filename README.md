@@ -1,14 +1,15 @@
 <!-- AIGNITE Banner (centered) -->
 <div align="center">
-  <h1> Vertex AI – An AI Powered bridge from learning to opportunity. </h1>
+  <h1> Vertex  – An bridge from learning to opportunity. </h1>
   <p><strong>Powered by MLSC | AIGNITE 2K25</strong></p>
 </div>
 
 ---
 
 <p align="center">
-  <strong>🚀 Vertex AI</strong><br/>
-  <em>An all-in-one AI-powered platform helping students learn, practice, and grow from zero to career-ready heroes.</em>
+  <strong>🚀 Vertex </strong><br/>
+  <em>An all-in-one 
+    platform helping students learn, practice, and grow from zero to career-ready heroes.</em>
 </p>
 
 ---
@@ -80,12 +81,12 @@ Students struggle to connect classroom learning with real-world skills, certific
 | U. Deepak | Team Lead | deepakuppala8@gmail.com.com |
 | S. Ranjith | Backend Developer | siddamranjith52447@gmail.com |
 | V.S. Rishi Charan | Frontend Developer | rishicharanvanam250@gmail.com |
-| S. Pranay | ML Engineer | s.pranayy07@gmail.com |
+| S. Pranay | Support Lead| s.pranayy07@gmail.com |
 
 ---
 
 ## 🛠️ Technology Stack
-`React.js` | `Node.js` | `Firebase` | `Python` | `Vertex AI` | `TensorFlow`
+`React.js` | `Next.js` | `Firebase` | `jspdf` | `Html canvas` | `Tailwind css`
 
 ---
 
