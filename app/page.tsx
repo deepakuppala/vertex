@@ -628,47 +628,23 @@ function HomeContent() {
 </nav>
 
 
-{/* Hero Section - Increased Padding */}
-<section id="home" className="relative flex flex-col justify-center items-center text-center py-28 md:py-40 bg-gradient-to-br from-blue-700 to-indigo-800 text-white overflow-hidden">
-    
-    {/* Optional: Subtle background texture/pattern for depth */}
-    <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/path/to/subtle-pattern.svg')]"></div>
+        <section className="relative flex flex-col justify-center items-center text-center py-40 bg-gradient-to-r from-blue-500 to-indigo-600 text-white overflow-hidden">
+          <div className="relative z-10 animate-fadeInUp">
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg">Explore. Learn. Achieve.</h1>
+            <p className="max-w-2xl text-lg md:text-xl mb-8 text-gray-100">
+              Vertex — your all-in-one platform to learn, practice, and grow.
+Quizzes, coding challenges, AI tools, resumes, interviews, and certifications.
+            </p>
+            <div className="flex gap-4 flex-wrap justify-center">
+              <Link href="/roadmaps" className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition transform hover:scale-105">Explore Roadmaps</Link>
+              <Link href="/cheatsheets" className="px-6 py-3 bg-blue-700 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-800 transition transform hover:scale-105">Access Cheat Sheets</Link>
+            </div>
+          </div>
+        </section>
 
-    <div className="relative z-10 animate-fadeInUp max-w-4xl mx-auto px-6"> 
-        
-        {/* Headline */}
-        <h1 className="text-4xl md:text-5xl font-black mb-4 tracking-tight drop-shadow-2xl">
-            Master the Tech Stack. <span className="text-yellow-400">Prove Your Skills.</span>
-        </h1>
-        
-        {/* Subtitle */}
-        <p className="max-w-3xl text-lg md:text-xl mb-8 text-blue-100 font-light leading-relaxed">
-            **VerteX** provides the ultimate practice ground: take **targeted quizzes** and solve **real-world coding challenges**.
-        </p>
-        
-        {/* Call-to-Action Buttons */}
-        <div className="flex gap-4 sm:gap-6 flex-wrap justify-center">
-            
-            {/* CTA 1: Quizzes (Primary Focus) */}
-            <a 
-                onClick={() => document.getElementById('quiz')?.scrollIntoView({behavior:'smooth'})} 
-                className="px-6 py-3 bg-green-500 text-white font-extrabold text-md rounded-xl shadow-xl hover:bg-green-600 transition transform hover:scale-105 cursor-pointer ring-4 ring-green-300/50"
-            >
-                Start Rapid Quiz 🧠
-            </a>
-            
-            {/* CTA 2: Challenges (Strong Secondary Focus) */}
-            <a 
-                onClick={() => document.getElementById('challenges')?.scrollIntoView({behavior:'smooth'})} 
-                className="px-6 py-3 bg-purple-500 text-white font-extrabold text-md rounded-xl shadow-xl hover:bg-purple-600 transition transform hover:scale-105 cursor-pointer ring-4 ring-purple-300/50"
-            >
-                View Coding Challenges 💻
-            </a>
-            
-        </div>
-        
-    </div>
-</section>
+
+
+
 {/* Key Benefits/Feature Highlight Section */}
 <section className="py-20 bg-gray-100">
     <div className="max-w-7xl mx-auto px-6">
