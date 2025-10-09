@@ -110,7 +110,7 @@ Students struggle to connect classroom learning with real-world skills, certific
 
 ## 🖼️ Assets / Screenshots
 <p align="center">
-  <img src="assets/vertex_logo.png" alt="Vertex AI Logo" width="220" /><br/>
+  <img src="assets/vertex_logo.jpg" alt="Vertex AI Logo" width="220" /><br/>
   <img src="assets/screenshot1.png" alt="Application Screenshot" width="600" />
 </p>
 
