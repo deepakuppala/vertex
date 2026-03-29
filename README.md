@@ -73,18 +73,6 @@ Students struggle to connect classroom learning with real-world skills, certific
 
 ---
 
-## 👥 Team Details
-**Team Name:** `CodeSprinters`
-
-| Name | Role | Email |
-|---|---:|---|
-| U. Deepak | Team Lead | deepakuppala8@gmail.com.com |
-| S. Ranjith | Backend Developer | siddamranjith52447@gmail.com |
-| V.S. Rishi Charan | Frontend Developer | rishicharanvanam250@gmail.com |
-| S. Pranay | Support Lead| s.pranayy07@gmail.com |
-
----
-
 ## 🛠️ Technology Stack
 `React.js` | `Next.js` | `Firebase` | `jspdf` | `Html canvas` | `Tailwind css`
 
@@ -116,6 +104,3 @@ Students struggle to connect classroom learning with real-world skills, certific
 
 ---
 
-<p align="center">
-  <b>Hackathon:</b> AIGNITE 2K25 | Organized by MLSC<br/>
-</p>
